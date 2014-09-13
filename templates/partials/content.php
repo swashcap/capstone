@@ -6,33 +6,28 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-        <?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-
-        <?php if ( 'post' == get_post_type() ) : ?>
+        <?php if (has_post_thumbnail()) : ?>
+            <div class="entry-thumbnail">
+                <?php capstone_picture(get_post_thumbnail_id()); ?>
+            </div><!-- .entry-thumbnail -->
+        <?php endif; ?>
         <div class="entry-meta">
             <?php capstone_posted_on(); ?>
         </div><!-- .entry-meta -->
-        <?php endif; ?>
+        <h1 class="entry-title">
+            <a href="<?php the_permalink(); ?>">
+                <?php the_title(); ?>
+            </a>
+        </h1>
     </header><!-- .entry-header -->
 
-    <div class="entry-content">
-        <?php
-            /* translators: %s: Name of current post */
-            the_content( sprintf(
-                __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'capstone' ),
-                the_title( '<span class="screen-reader-text">"', '"</span>', false )
-            ) );
-        ?>
+    <div class="entry-summary">
+        <?php the_excerpt(); ?>
+    </div><!-- .entry-summary -->
 
-        <?php
-            wp_link_pages( array(
-                'before' => '<div class="page-links">' . __( 'Pages:', 'capstone' ),
-                'after'  => '</div>',
-            ) );
-        ?>
-    </div><!-- .entry-content -->
+    <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark"><?php _e('Read Post', 'capstone'); ?></a>
 
-    <footer class="entry-footer">
+    <footer class="entry-footer hidden">
         <?php capstone_entry_footer(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

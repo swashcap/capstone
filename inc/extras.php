@@ -87,3 +87,25 @@ function capstone_setup_author() {
     }
 }
 add_action( 'wp', 'capstone_setup_author' );
+
+/**
+ * Alter WordPress's default excerpt trailing content.
+ *
+ * @param  string $more Default 'more' text
+ * @return string       Transformed 'more' text
+ */
+function capstone_excerpt_more($more) {
+    return '&hellip;';
+}
+add_filter('excerpt_more', 'capstone_excerpt_more');
+
+/**
+ * Alter WordPress's default excerpt length.
+ *
+ * @param  int $length Default excerpt length
+ * @return int         Transformed length
+ */
+function capstone_excerpt_length($length) {
+    return 36;
+}
+add_filter('excerpt_length', 'capstone_excerpt_length');
