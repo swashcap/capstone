@@ -15,7 +15,9 @@ get_header(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <h1 class="entry-title hidden"><?php the_title(); ?></h1>
                 <div class="entry-content">
-
+                    <?php
+                        get_template_part('templates/partials/front-page/front-page', 'intro');
+                    ?>
                 </div><!-- .entry-content -->
             </article><!-- #post-<?php the_ID(); ?> -->
         <?php
