@@ -1,0 +1,10 @@
+{
+  "name": "capstone",
+  "version": "0.1.0",
+  "authors": [
+    "Cory Reed <swashcap@gmail.com>"
+  ],
+  "description": "Front-end assets for Capstone WordPress theme.",
+  "license": "MIT",
+  "private": true
+}
