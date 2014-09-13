@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap-sass-official": "~3.2.0+2"
+    "bootstrap-sass-official": "~3.2.0+2",
+    "picturefill": "~2.1.0"
   }
 }
