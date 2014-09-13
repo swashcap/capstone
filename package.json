@@ -1,0 +1,12 @@
+{
+  "name": "capstone",
+  "version": "0.1.0",
+  "description": "Tasks for Capstone WordPress theme.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cory Reed <swashcap@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
