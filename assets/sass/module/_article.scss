@@ -2,27 +2,7 @@
    Article
    ========================================================================== */
 
-/* Excerpts
-   ========================================================================== */
-
-/**
- * Blog post excerpts.
- */
-.article--excerpt {
-    @include vertical-spacing;
-    @include vertical-spacing($size: 2, $method: 'margin');
-
-    border-bottom: thin solid $brown-light;
-    text-align: center;
-
-    .entry-thumbnail {
-        @include vertical-spacing($method: 'margin');
-
-        img {
-            max-width: none;
-            width: 100%;
-        }
-    }
+%article {
     .entry-meta {
         @include vertical-spacing($method: 'margin');
 
@@ -36,6 +16,31 @@
     }
     .entry-title {
         @include heading;
+    }
+}
+
+/* Excerpts
+   ========================================================================== */
+
+/**
+ * Blog post excerpts.
+ */
+.article--excerpt {
+    @extend %article;
+
+    @include vertical-spacing;
+    @include vertical-spacing($size: 2, $method: 'margin');
+
+    border-bottom: thin solid $brown-light;
+    text-align: center;
+
+    .entry-thumbnail {
+        @include vertical-spacing($method: 'margin');
+
+        img {
+            max-width: none;
+            width: 100%;
+        }
     }
     .entry-summary {
         @include vertical-spacing($method: 'margin');
@@ -61,7 +66,61 @@
    ========================================================================== */
 
 .article {
-    .entry-title {
-        @include heading;
+    @extend %article;
+
+    .entry-header {
+        text-align: center;
+    }
+    .entry-content {
+        a {
+            text-decoration: underline;
+        }
+        h1 {
+            color: $green-dark;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-weight: 700;
+            text-align: center;
+        }
+        h2 {
+            color: $brown;
+            font-style: italic;
+            font-weight: 700;
+            text-align: center;
+        }
+        h3 {
+            @include uppercase;
+
+            color: $gray-dark;
+            text-align: center;
+        }
+        h4 {
+            @include uppercase;
+
+            color: $gray;
+            font-size: 100%;
+            font-weight: 700;
+        }
+        h5 {
+            color: $gray;
+            font-size: 100%;
+            font-weight: 700;
+        }
+        h6 {
+            @include uppercase;
+
+            color: $gray;
+        }
+        img.size-full {
+            @media (min-width: $screen-sm-min) {
+                max-width: none;
+                margin: 1em 0 1em -10%;
+                width: 125%;
+            }
+            @media (min-width: $screen-md-min) {
+                margin-left: -16.67%;
+                width: 133.3%;
+            }
+        }
     }
 }
