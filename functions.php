@@ -121,3 +121,8 @@ require get_template_directory() . '/inc/extras.php';
  * Add custom navigation menu walker.
  */
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+
+/**
+ * Add custom post types with theme.
+ */
+require get_template_directory() . '/inc/custom-post-types.php';
