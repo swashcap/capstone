@@ -108,6 +108,19 @@ function capstone_scripts() {
 add_action( 'wp_enqueue_scripts', 'capstone_scripts' );
 
 /**
+ * Add custom widgets to the theme.
+ *
+ * @link http://codex.wordpress.org/Widgets_API
+ *
+ * @return void
+ */
+function capstone_register_widgets() {
+    register_widget('Capstone_Widget_Page_Callout');
+    register_widget('Capstone_Widget_Testimonial');
+}
+add_action('widgets_init', 'capstone_register_widgets');
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -126,3 +139,9 @@ require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
  * Add custom post types with theme.
  */
 require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
+ * Custom widgets
+ */
+require get_template_directory() . '/inc/widget-page-callout.php';
+require get_template_directory() . '/inc/widget-testimonial.php';
