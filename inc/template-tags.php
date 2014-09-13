@@ -163,3 +163,39 @@ function capstone_category_transient_flusher() {
 }
 add_action( 'edit_category', 'capstone_category_transient_flusher' );
 add_action( 'save_post',     'capstone_category_transient_flusher' );
+
+/**
+ * Output `picture` element.
+ *
+ * @param  int  $image_id WordPress attachment ID
+ * @return void
+ */
+function capstone_picture($image_id) {
+    $full = wp_get_attachment_image_src($image_id, 'full');
+    $large = wp_get_attachment_image_src($image_id, 'large');
+    $medium = wp_get_attachment_image_src($image_id, 'medium');
+    $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+
+    if ($full && $large && $medium) {
+        printf(
+            '<picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="%1$s" media="(min-width: 1024px)">
+                <source srcset="%2$s, %1$s 2x" media="(min-width: 300px)">
+                <source srcset="%3$s, %2$s 2x">
+                <!--[if IE 9]></video><![endif]-->
+                <img srcset="%3$s, %2$s 2x" alt="%4$s">
+            </picture>',
+            $full[0],
+            $large[0],
+            $medium[0],
+            esc_attr($alt_text)
+        );
+    } elseif ($large) {
+        printf(
+            '<img src="%1$s" alt="%2$s">',
+            $large[0],
+            esc_attr($alt_text)
+        );
+    }
+}
