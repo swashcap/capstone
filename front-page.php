@@ -17,6 +17,7 @@ get_header(); ?>
                 <div class="entry-content">
                     <?php
                         get_template_part('templates/partials/front-page/front-page', 'intro');
+                        get_template_part('templates/partials/front-page/front-page', 'blog');
                     ?>
                 </div><!-- .entry-content -->
             </article><!-- #post-<?php the_ID(); ?> -->
