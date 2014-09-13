@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Article
+   ========================================================================== */
+
+/* Excerpts
+   ========================================================================== */
+
+/**
+ * Blog post excerpts.
+ */
+.article--excerpt {
+    @include vertical-spacing;
+    @include vertical-spacing($size: 2, $method: 'margin');
+
+    border-bottom: thin solid $brown-light;
+    text-align: center;
+
+    .entry-thumbnail {
+        @include vertical-spacing($method: 'margin');
+
+        img {
+            max-width: none;
+            width: 100%;
+        }
+    }
+    .entry-meta {
+        @include vertical-spacing($method: 'margin');
+
+        .posted-on {
+            @include uppercase;
+
+            color: $gray;
+            font-size: $font-size-small;
+            line-height: $line-height-small;
+        }
+    }
+    .entry-title {
+        @include heading;
+    }
+    .entry-summary {
+        @include vertical-spacing($method: 'margin');
+
+        text-align: left;
+
+        @media (min-width: $screen-sm-min) {
+            padding-right: $grid-gutter-width;
+            padding-left: $grid-gutter-width;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+    .btn {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}
+
+/* Article
+   ========================================================================== */
+
+.article {
+    .entry-title {
+        @include heading;
+    }
+}

@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+/**
+ * Uppercase.
+ *
+ * Normalized upper-casing and letterspacing. Intended for use on the
+ * sans-serif font.
+ */
+@mixin uppercase() {
+    letter-spacing: .25ex;
+    text-transform: uppercase
+}
+
+/**
+ * Heading.
+ */
+@mixin heading {
+    color: $green-dark;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: $font-size-h1;
+    font-style: italic;
+    font-weight: 700;
+    line-height: $headings-line-height;
+
+    @media (min-width: $screen-sm-min) {
+        font-size: 32px;
+    }
+    @media (min-width: $screen-md-min) {
+        font-size: 36px;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+            color: $orange;
+            text-decoration: none;
+        }
+        &:active {
+            color: $orange-dark;
+        }
+    }
+}
+
+/**
+ * Vertical spacing.
+ *
+ * A normalized, single-access point for vertical spacing of the site's
+ * elements. Use it to keep spacing consistent.
+ *
+ * @param number $size      Spacing multiplication factor
+ * @param string $method    Spacing method ("padding" or "margin")
+ * @param string $direction Direction which to apply spacing
+ */
+@mixin vertical-spacing($size: 1, $method: 'padding', $direction: 'bottom') {
+    #{$method}-#{$direction}: $size * 1em;
+
+    @media (min-width: $screen-sm-min) {
+        #{$method}-#{$direction}: $size * 2em;
+    }
+}

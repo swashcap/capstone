@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Testimonial
+   ========================================================================== */
+
+.testimonial {
+    text-align: center;
+}
+
+.testimonial__image {
+    margin: 0 auto;
+    width: 8em;
+
+    img {
+        display: block;
+        max-width: none;
+        width: 100%;
+    }
+}
+
+.testimonial__quote {
+    border: none;
+}
+
+.testimonial__source {
+    .fn {
+        display: block;
+        font-weight: 700;
+    }
+}

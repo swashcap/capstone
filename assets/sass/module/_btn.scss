@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Button
+   ========================================================================== */
+
+/**
+ * Extend Twitter Bootstrap's button styles.
+ */
+
+.btn {
+    border: none;
+}
+.btn-default {
+    background: $brown;
+    color: $white;
+
+    &:focus,
+    &:hover {
+        background: $orange;
+        color: $white;
+    }
+    &:active {
+        background: $orange-dark;
+        color: $white;
+    }
+}

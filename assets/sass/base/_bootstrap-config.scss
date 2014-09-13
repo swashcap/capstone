@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Bootstrap Config
+   ========================================================================== */
+
+/* Colors
+   ========================================================================== */
+
+$brand-primary:    $green;
+$brand-success:    $green;
+$brand-danger:     $orange;
+
+$body-bg:          $white;
+$text-color:       $gray-darker;
+
+$link-color:       $green-dark;
+$link-hover-color: $orange;
+
+/* Typography
+   ========================================================================== */
+
+$font-family-serif: 'Lora', Georgia, serif;
+
+$font-family-base: $font-family-serif;
+
+$font-size-h1: 24px;
+$font-size-h2: 21px;
+$font-size-h3: 18px;
+$font-size-h4: 16px;
+$font-size-h5: 14px;
+$font-size-h6: 12px;
+
+$line-height-base: 1.75;
+
+$headings-font-height: 700;
+$headings-line-height: 1.2;
+
+/* Components
+   ========================================================================== */
+
+$padding-base-vertical:   5px;
+$padding-base-horizontal: 20px;
+
+$border-radius-base:      2px;
+$border-radius-large:     4px;
+$border-radius-small:     2px;
+
+/* Buttons
+   ========================================================================== */
+
+$btn-font-weight: 700;
+
+/* Media Query Breakpoints
+   ========================================================================== */
+
+$screen-sm: 600px;
+$screen-md: 900px;
+
+/* Grid System
+   ========================================================================== */
+
+$grid-gutter-width: 40px;
+
+/* Code
+   ========================================================================== */
+
+$code-color:       $gray-dark;
+$code-bg:          $gray-lighter;
+
+$kbd-color:        $code-color;
+$kbd-bg:           $code-bg;
+
+$pre-bg:           $code-bg;
+$pre-color:        $code-color;
+$pre-border-color: transparent;

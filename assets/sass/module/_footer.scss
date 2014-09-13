@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site__footer {
+    .col-xs-12:nth-of-type(odd) {
+        @media (min-width: $screen-sm-min) {
+            clear: left;
+        }
+        @media (min-width: $screen-md-min) {
+            clear: none;
+        }
+    }
+
+    .copyright {
+        display: block;
+        font-size: 100%;
+        line-height: inherit;
+        text-align: center;
+
+        @media (min-width: $screen-sm-min) {
+            text-align: right;
+        }
+    }
+}
