@@ -20,6 +20,7 @@ get_header(); ?>
                         get_template_part('templates/partials/front-page/front-page', 'work');
                         get_template_part('templates/partials/front-page/front-page', 'about');
                         get_template_part('templates/partials/front-page/front-page', 'blog');
+                        get_template_part('templates/partials/front-page/front-page', 'contact');
                     ?>
                 </div><!-- .entry-content -->
             </article><!-- #post-<?php the_ID(); ?> -->
