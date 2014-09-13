@@ -83,9 +83,29 @@ function capstone_widgets_init() {
 add_action( 'widgets_init', 'capstone_widgets_init' );
 
 /**
+ * Return the stylesheet URL for theme's webfonts.
+ *
+ * @todo Make these controllable in the admin.
+ *
+ * @return string
+ */
+function capstone_font_url() {
+    // return 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Volkhov:700italic';
+
+    return 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Playfair+Display:700italic';
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function capstone_scripts() {
+    wp_enqueue_style(
+        'capstone-webfonts',
+        capstone_font_url(),
+        array(),
+        null
+    );
+
     wp_enqueue_style(
         'capstone-styles',
         get_template_directory_uri() . '/assets/css/main.css',

@@ -4,11 +4,13 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('article--excerpt'); ?>>
     <header class="entry-header">
         <?php if (has_post_thumbnail()) : ?>
             <div class="entry-thumbnail">
-                <?php capstone_picture(get_post_thumbnail_id()); ?>
+                <a href="<?php the_permalink(); ?>" rel="bookmark">
+                    <?php capstone_picture(get_post_thumbnail_id()); ?>
+                </a>
             </div><!-- .entry-thumbnail -->
         <?php endif; ?>
         <div class="entry-meta">
@@ -28,6 +30,7 @@
     <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark"><?php _e('Read Post', 'capstone'); ?></a>
 
     <footer class="entry-footer hidden">
+        <?php capstone_entry_author(); ?>
         <?php capstone_entry_footer(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->
