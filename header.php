@@ -24,12 +24,12 @@
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                            <a href="#navigation" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
                                 <span class="sr-only"><?php _e('Toggle navigation', 'capstone'); ?></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
-                            </button>
+                            </a>
                             <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
                         </div>
                         <?php
