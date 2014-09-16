@@ -3,14 +3,24 @@
    ========================================================================== */
 
 .testimonial {
+    @include vertical-spacing;
+    @include vertical-spacing($method: 'margin');
+
+    border-bottom: thin solid $brown-light;
     text-align: center;
 }
 
 .testimonial__image {
-    margin: 0 auto;
-    width: 8em;
+    margin: 0 auto .5em auto;
+    width: 6em;
+
+    @media (min-width: $screen-sm-min) {
+        margin-bottom: 1em;
+        width: 8em;
+    }
 
     img {
+        border-radius: 50%;
         display: block;
         max-width: none;
         width: 100%;
@@ -19,11 +29,65 @@
 
 .testimonial__quote {
     border: none;
+    color: $green-dark;
+    font-size: 100%;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 (-.25 * $grid-gutter-width) 1em (-.25 * $grid-gutter-width);
+    padding: 0 1.125em;
+    position: relative;
+
+    @media (min-width: $screen-sm-min) {
+        font-size: $font-size-h3;
+        margin: 0 0 .75em;
+        padding: 0 1.5em;
+    }
+
+    &:before,
+    &:after {
+        color: $brown-light;
+        display: block;
+        font-size: 250%;
+        line-height: .75;
+        position: absolute;
+        width: 1em;
+    }
+    &:before {
+        content: '“';
+        left: 0;
+        text-align: left;
+        top: 0;
+    }
+    &:after {
+        bottom: -.25em;
+        content: '”';
+        right: 0;
+        text-align: right;
+    }
+
+    a {
+        text-decoration: underline;
+    }
 }
 
 .testimonial__source {
     .fn {
+        color: $brown;
         display: block;
         font-weight: 700;
+
+        @media (min-width: $screen-sm-min) {
+            font-size: $font-size-h4;
+            margin-bottom: .25em;
+        }
+    }
+    .note {
+        @include uppercase;
+
+        color: mix($brown-light, $brown);
+        display: block;
+        font-size: $font-size-h6;
     }
 }

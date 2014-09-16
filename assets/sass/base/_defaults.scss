@@ -2,6 +2,17 @@
    Defaults
    ========================================================================== */
 
+::-moz-selection{
+  background: $green-dark;
+  color: $white;
+  text-shadow: none;
+}
+::selection {
+  background: $green-dark;
+  color: $white;
+  text-shadow: none;
+}
+
 a {
     transition:
         background 100ms ease-in-out,
