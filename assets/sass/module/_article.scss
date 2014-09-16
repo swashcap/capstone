@@ -122,5 +122,23 @@
                 width: 133.3%;
             }
         }
+        .lead {
+            border-color: $brown-light;
+            border-style: solid;
+            border-width: thin 0;
+            color: $brown;
+            font-size: $font-size-h4;
+            font-style: italic;
+            line-height: 1.6;
+            margin: 0 0 1em;
+            padding: 1em 0;
+
+            @media (min-width: $screen-sm-min) {
+                font-size: $font-size-h2;
+                line-height: 1.7;
+                margin: 0 0 1.5em;
+                padding: 1em 1.7em;
+            }
+        }
     }
 }
