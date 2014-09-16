@@ -11,7 +11,7 @@
             </div><!-- #content -->
 
             <footer class="site__footer" role="contentinfo">
-                <div class="container">
+                <div class="container-fluid">
                     <small class="copyright">
                         <?php
                             _e(sprintf('&copy;%d, %s. All rights reserved.', date('Y'), get_bloginfo('name')), 'capstone');

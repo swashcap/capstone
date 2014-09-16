@@ -22,7 +22,7 @@
 
             <header class="site__header" role="banner">
                 <nav class="navbar navbar-default" role="navigation">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
                                 <span class="sr-only"><?php _e('Toggle navigation', 'capstone'); ?></span>
