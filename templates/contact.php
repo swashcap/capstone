@@ -10,10 +10,12 @@ get_header(); ?>
             while (have_posts()) :
                 the_post();
         ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
                 <div class="row">
                     <div class="col-xs-12 col-sm-8 col-md-6 col-md-offset-1">
-                        <h1 class="entry-title"><?php the_title(); ?></h1>
+                        <header class="entry-header">
+                            <h1 class="entry-title"><?php the_title(); ?></h1>
+                        </header><!-- .entry-header -->
                         <div class="entry-content">
                             <?php get_template_part('templates/partials/intro-text'); ?>
                             <?php the_content(); ?>
