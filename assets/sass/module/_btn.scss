@@ -8,6 +8,9 @@
 
 .btn {
     border: none;
+    transition:
+        background 100ms ease-in-out,
+        color 100ms ease-in-out;
 }
 .btn-default {
     background: $brown;

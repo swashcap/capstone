@@ -12,7 +12,7 @@ get_header(); ?>
             while (have_posts()) :
                 the_post();
         ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0 col-sm-push-8 col-md-push-7">
                         <?php the_post_thumbnail('full'); ?>

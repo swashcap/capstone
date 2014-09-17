@@ -49,6 +49,13 @@ $border-radius-small:     2px;
 
 $btn-font-weight: 700;
 
+/* Forms
+   ========================================================================== */
+
+$input-bg-disabled:       $gray-light;
+$input-color:             $gray-darker;
+$input-color-placeholder: $gray;
+
 /* Media Query Breakpoints
    ========================================================================== */
 
@@ -59,6 +66,17 @@ $screen-md: 900px;
    ========================================================================== */
 
 $grid-gutter-width: 40px;
+
+/* Navbar
+   ========================================================================== */
+
+$navbar-height:                    70px;
+$navbar-margin-bottom:             0;
+$navbar-border-radius:             0;
+
+$navbar-default-link-color:                $gray-dark;
+$navbar-default-link-hover-color:          $green-dark;
+$navbar-default-link-hover-bg:             transparent;
 
 /* Code
    ========================================================================== */
@@ -72,3 +90,9 @@ $kbd-bg:           $code-bg;
 $pre-bg:           $code-bg;
 $pre-color:        $code-color;
 $pre-border-color: transparent;
+
+/* Wells
+   ========================================================================== */
+
+$well-bg:     mix($brown, $white, 3%);
+$well-border: $brown-light;

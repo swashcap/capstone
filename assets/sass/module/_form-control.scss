@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Form Control
+   ========================================================================== */
+
+/**
+ * Extend Bootstrap's regular form styling.
+ */
+label {
+    @include uppercase;
+
+    color: $gray;
+    font-size: $font-size-h6;
+}
+.form-control {
+    border-color: $gray-light;
+    box-shadow: none;
+    transition-duration: 100ms;
+
+    &:focus {
+        border-color: $gray-darker;
+        box-shadow: none;
+    }
+}
+
+.well {
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+    box-shadow: none;
+}

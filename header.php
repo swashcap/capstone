@@ -36,7 +36,7 @@
                             wp_nav_menu( array(
                                 'menu'            => 'primary',
                                 'theme_location'  => 'primary',
-                                'depth'           => 2,
+                                'depth'           => 1,
                                 'container'       => 'div',
                                 'container_class' => 'collapse navbar-collapse',
                                 'container_id'    => 'navbar-collapse-1',
@@ -45,8 +45,8 @@
                                 'walker'          => new wp_bootstrap_navwalker()
                             ));
                         ?>
-                    </nav><!-- .navbar.navbar-default -->
-                </div><!-- .container -->
+                    </div><!-- .container-fluid -->
+                </nav><!-- .navbar.navbar-default -->
             </header><!-- .site__header -->
 
             <div id="content" class="site-content">

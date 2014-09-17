@@ -13,13 +13,17 @@
     }
 
     .copyright {
+        @include uppercase;
+
+        color: $gray-light;
         display: block;
-        font-size: 100%;
-        line-height: inherit;
+        font-size: $font-size-h6;
+        line-height: 1.5;
+        padding: .5em 0;
         text-align: center;
 
         @media (min-width: $screen-sm-min) {
-            text-align: right;
+            padding: 2em 0 3em;
         }
     }
 }

@@ -30,6 +30,9 @@
     @media (min-width: $screen-md-min) {
         font-size: 36px;
     }
+    @media (min-width: $screen-lg-min) {
+        font-size: 48px;
+    }
 
     a {
         text-decoration: none;
