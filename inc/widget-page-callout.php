@@ -37,15 +37,57 @@ class Capstone_Widget_Page_Callout extends WP_Widget
      */
     public function widget($args, $instance)
     {
-        extract($args);
+        if (! empty($instance['page_id'])) :
+            extract($args);
 
-        $title = apply_filters('widget_title', $instance['title']);
+            $title = apply_filters('widget_title', $instance['title']);
 
-        echo $before_widget;
-        if (! empty($title)) {
-            echo $before_title . $title . $after_title;
-        }
-        echo $after_widget;
+            $result = new WP_Query(array(
+                'post_type' => 'page',
+                'p'         => $instance['page_id']
+            ));
+
+            if ($result->have_posts()) :
+                echo $before_widget;
+                if (! empty($title)) {
+                    echo $before_title . $title . $after_title;
+                }
+                echo '<div class="widget-content">';
+                while($result->have_posts()) :
+                    $result->the_post();
+
+                    if (
+                        ! empty($instance['include_thumbnail']) &&
+                        $instance['include_thumbnail'] == 1 &&
+                        has_post_thumbnail()
+                    ) :
+                        ?>
+                            <div class="widget-thumbnail">
+                                <a href="<?php the_permalink(); ?>" rel="bookmark">
+                                    <?php the_post_thumbnail(); ?>
+                                </a>
+                            </div><!-- .widget_thumbnail -->
+                        <?php
+                    endif; // ! empty($instance['include_thumbnail']) ...
+
+                    echo '<p>' . $instance['content'] . '</p>';
+
+                    if (! empty($instance['button_text'])) {
+                        printf(
+                            '<a href="%1$s" class="btn btn-default">%2$s</a>',
+                            esc_url(get_permalink()),
+                            $instance['button_text']
+                        );
+                    }
+                endwhile; // $result->have_posts()
+
+                echo '</div><!-- .widget_content -->';
+                echo $after_widget;
+
+            endif; // $result->have_posts()
+            wp_reset_query();
+
+        endif; // ! empty($instance['page_id'])
     }
 
     /**
@@ -58,10 +100,10 @@ class Capstone_Widget_Page_Callout extends WP_Widget
     {
         global $wpdb;
 
-        $page_id = 0;
+        $page_id = ! empty($instance['page_id']) ? $instance['page_id'] : 0;
         $title = ! empty($instance['title']) ? strip_tags($instance['title']) : '';
         $content = ! empty($instance['content']) ? esc_html($instance['content']) : '';
-        $include_thumbnail = 1;
+        $include_thumbnail = isset($instance['include_thumbnail']) ? $instance['include_thumbnail'] : 1;
         $button_text = ! empty($instance['button_text']) ? strip_tags($instance['button_text']) : '';
 
         $pages = $wpdb->get_results($wpdb->prepare("
@@ -87,7 +129,7 @@ class Capstone_Widget_Page_Callout extends WP_Widget
             </p>
             <textarea name="<?php echo $this->get_field_name('content'); ?>" id="<?php echo $this->get_field_id('content'); ?>" class="widefat" rows="8" cols="20"><?php echo $content; ?></textarea>
             <p>
-                <input name="<?php echo $this->get_field_name('include_thumbnail'); ?>" id="<?php echo $this->get_field_id('include_thumbnail'); ?>" type="checkbox" <?php checked(1, $include_thumbnail); ?> />
+                <input name="<?php echo $this->get_field_name('include_thumbnail'); ?>" value="1" id="<?php echo $this->get_field_id('include_thumbnail'); ?>" type="checkbox" <?php checked(1, $include_thumbnail, true); ?> />
                 <label for="<?php echo $this->get_field_id('include_thumbnail'); ?>"><?php _e('Include thumbnail image?', 'capstone'); ?></label>
             </p>
             <p>
@@ -109,8 +151,10 @@ class Capstone_Widget_Page_Callout extends WP_Widget
         $instance = array();
 
         $instance['title'] = ! empty($new_instance['title']) ? strip_tags($new_instance['title']) : '';
-        $instance['testimonial'] = ! empty($new_instance['testimonial']) ? $new_instance['testimonial'] : '';
-        $instance['show_image'] = $new_instance['show_image'] == 1 ? 1 : 0;
+        $instance['page_id'] = ! empty($new_instance['page_id']) ? esc_attr($new_instance['page_id']) : '';
+        $instance['content'] = ! empty($new_instance['content']) ? esc_html($new_instance['content']) : '';
+        $instance['include_thumbnail'] = (isset($new_instance['include_thumbnail']) && $new_instance['include_thumbnail'] == 1) ? 1 : 0;
+        $instance['button_text'] = ! empty($new_instance['button_text']) ? strip_tags($new_instance['button_text']) : '';
 
         return $instance;
     }
