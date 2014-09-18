@@ -65,6 +65,15 @@ gulp.task('build', function () {
 gulp.task('default', ['styles', 'scripts']);
 
 gulp.task('watch', function () {
+    $.livereload.listen();
+
+    gulp.watch([
+        'assets/css/*.css',
+        'assets/js/*.js',
+        '**.*php'
+    ])
+        .on('change', $.livereload.changed);
+
     gulp.watch('assets/sass/**/*.scss', ['styles']);
     gulp.watch('assets/js/source/**/*.js', ['scripts']);
 });
