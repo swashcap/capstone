@@ -12,27 +12,28 @@
 @import 'module/form-control';
 @import 'module/header';
 @import 'module/testimonial';
+@import 'module/widget';
 
 @import 'layout/front-page';
 
 /**
  * @todo Move these styles somewhere more appropriate.
  */
-body {
-    border-top: 10px solid $gray-dark;
+// body {
+//     border-top: 10px solid $gray-dark;
 
-    @media (min-width: $screen-sm-min) {
-        background: $gray-dark;
-        border: none;
-        padding: 10px;
-    }
-    @media (min-width: $screen-md-min) {
-        padding: 15px;
-    }
-    @media (min-width: $screen-lg-min) {
-        padding: 20px;
-    }
-}
-.site {
-    background: $white;
-}
+//     @media (min-width: $screen-sm-min) {
+//         background: $gray-dark;
+//         border: none;
+//         padding: 10px;
+//     }
+//     @media (min-width: $screen-md-min) {
+//         padding: 15px;
+//     }
+//     @media (min-width: $screen-lg-min) {
+//         padding: 20px;
+//     }
+// }
+// .site {
+//     background: $white;
+// }
