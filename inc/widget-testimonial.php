@@ -52,19 +52,19 @@ class Capstone_Widget_Testimonial extends WP_Widget
                 'p'         => $instance['testimonial']
             ));
 
-        echo $before_widget;
-        if (! empty($title)) {
-            echo $before_title . $title . $after_title;
-        }
-        echo '<div class="widget_content">';
-        while($result->have_posts()) :
-            $result->the_post();
-            get_template_part('templates/partials/testimonial');
-        endwhile; // $result->have_posts()
-        echo '</div><!-- .widget_content -->';
-        echo $after_widget;
+            echo $before_widget;
+            if (! empty($title)) {
+                echo $before_title . $title . $after_title;
+            }
+            echo '<div class="widget-content">';
+            while($result->have_posts()) :
+                $result->the_post();
+                get_template_part('templates/partials/testimonial');
+            endwhile; // $result->have_posts()
+            echo '</div><!-- .widget_content -->';
+            echo $after_widget;
 
-        wp_reset_query();
+            wp_reset_query();
         endif; // ! empty($instance['testimonial'])
     }
 
