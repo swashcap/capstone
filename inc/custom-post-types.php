@@ -52,14 +52,14 @@ function capstone_custom_post_types() {
         'label'           => __('Works', 'capstone'),
         'description'     => '',
         'public'          => true,
+        'has_archive'     => true,
         'show_ui'         => true,
         'show_in_menu'    => true,
         'capability_type' => 'post',
         'map_meta_cap'    => true,
-        'hierarchical'    => false,
+        'hierarchical'    => true,
         'rewrite'         => array(
-            'slug'       => 'work',
-            'with_front' => 1,
+            'with_front' => 0,
         ),
         'query_var'       => true,
         'supports'        => array(
@@ -95,7 +95,7 @@ function capstone_custom_post_types() {
         'work_categories',
         array('work'),
         array(
-            'hierarchical'      => false,
+            'hierarchical'      => true,
             'label'             => __('Categories', 'capstone'),
             'show_ui'           => true,
             'query_var'         => true,
