@@ -9,7 +9,7 @@
     <a href="<?php the_permalink(); ?>" rel="bookmark">
         <?php if (has_post_thumbnail()) : ?>
             <div class="entry-thumbnail">
-                <?php the_post_thumbnail(); ?>
+                <?php capstone_work_picture(get_post_thumbnail_id()); ?>
             </div>
         <?php endif; ?>
         <h1 class="work__title entry-title"><?php the_title(); ?></h1>

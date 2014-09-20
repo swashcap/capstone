@@ -258,3 +258,33 @@ function capstone_picture($image_id) {
         );
     }
 }
+
+/**
+ * Output `picture` element specifically for 'micro' work elements.
+ *
+ * @param  int  $image_id WordPress attachment ID
+ * @return void
+ */
+function capstone_work_picture($image_id) {
+    $small = wp_get_attachment_image_src($image_id, 'capstone_work_small');
+    $medium = wp_get_attachment_image_src($image_id, 'capstone_work_medium');
+    $large = wp_get_attachment_image_src($image_id, 'capstone_work_large');
+    $xlarge = wp_get_attachment_image_src($image_id, 'capstone_work_xlarge');
+    $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+
+    printf(
+        '<picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="%2$s, %1$s 2x" media="(min-width: 901px)">
+            <source srcset="%3$s, %2$s 2x" media="(min-width: 321px)">
+            <source srcset="%4$s, %3$s 2x">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="%4$s, %3$s 2x" alt="%5$s">
+        </picture>',
+        $xlarge[0],
+        $large[0],
+        $medium[0],
+        $small[0],
+        esc_attr($alt_text)
+    );
+}

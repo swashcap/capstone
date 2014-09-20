@@ -60,6 +60,16 @@ function capstone_setup() {
     add_theme_support( 'post-formats', array(
         'aside', 'image', 'video', 'quote', 'link',
     ) );
+
+    /**
+     * Add custom image sizes for the theme.
+     *
+     * @link http://codex.wordpress.org/Function_Reference/add_image_size
+     */
+    add_image_size('capstone_work_small', 120, 120, true);
+    add_image_size('capstone_work_medium', 240, 240, true);
+    add_image_size('capstone_work_large', 400, 400, true);
+    add_image_size('capstone_work_xlarge', 520, 520, true);
 }
 endif; // capstone_setup
 add_action( 'after_setup_theme', 'capstone_setup' );
