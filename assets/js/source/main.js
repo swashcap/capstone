@@ -10,6 +10,13 @@
         e.preventDefault();
     });
 
+    /**
+     * Fastclick.
+     *
+     * @link https://github.com/ftlabs/fastclick
+     */
+    FastClick.attach(document.body);
+
     // $($navbarToggle.data('target')).on('show.bs.collapse', function () {
     //     $(this).addClass('is-open');
     // });

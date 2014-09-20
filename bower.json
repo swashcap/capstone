@@ -9,6 +9,7 @@
   "private": true,
   "dependencies": {
     "bootstrap-sass-official": "~3.2.0+2",
-    "picturefill": "~2.1.0"
+    "picturefill": "~2.1.0",
+    "fastclick": "~1.0.3"
   }
 }
