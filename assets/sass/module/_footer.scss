@@ -3,6 +3,9 @@
    ========================================================================== */
 
 .site__footer {
+    @include vertical-spacing($size: 2, $method: 'margin');
+    @include vertical-spacing($size: 3, $method: 'margin', $direction: 'top');
+
     .col-xs-12:nth-of-type(odd) {
         @media (min-width: $screen-sm-min) {
             clear: left;
@@ -22,8 +25,8 @@
         padding: .5em 0;
         text-align: center;
 
-        @media (min-width: $screen-sm-min) {
-            padding: 2em 0 3em;
-        }
+        // @media (min-width: $screen-sm-min) {
+        //     padding: 2em 0 3em;
+        // }
     }
 }

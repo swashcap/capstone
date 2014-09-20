@@ -11,14 +11,20 @@
 @import 'module/footer';
 @import 'module/form-control';
 @import 'module/header';
+@import 'module/page-header';
 @import 'module/testimonial';
 @import 'module/widget';
+@import 'module/work';
 
+@import 'layout/archive-work';
 @import 'layout/front-page';
 
 /**
  * @todo Move these styles somewhere more appropriate.
  */
+// body {
+//     background: lime;
+// }
 // body {
 //     border-top: 10px solid $gray-dark;
 

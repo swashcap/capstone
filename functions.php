@@ -117,9 +117,7 @@ add_action( 'widgets_init', 'capstone_widgets_init' );
  * @return string
  */
 function capstone_font_url() {
-    // return 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Volkhov:700italic';
-
-    return 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Playfair+Display:700italic';
+    return 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Playfair+Display:700,700italic';
 }
 
 /**

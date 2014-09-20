@@ -18,9 +18,8 @@
  */
 @mixin heading {
     color: $green-dark;
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: $font-family-fancy;
     font-size: $font-size-h1;
-    font-style: italic;
     font-weight: 700;
     line-height: $headings-line-height;
 
@@ -29,10 +28,12 @@
     }
     @media (min-width: $screen-md-min) {
         font-size: 36px;
+        line-height: 1.1;
     }
-    @media (min-width: $screen-lg-min) {
-        font-size: 48px;
-    }
+    // @media (min-width: $screen-lg-min) {
+    //     font-size: 48px;
+    //     line-height: 1.05;
+    // }
 
     a {
         text-decoration: none;
@@ -59,9 +60,12 @@
  * @param string $direction Direction which to apply spacing
  */
 @mixin vertical-spacing($size: 1, $method: 'padding', $direction: 'bottom') {
-    #{$method}-#{$direction}: $size * 1em;
+    #{$method}-#{$direction}: $size * .5em;
 
     @media (min-width: $screen-sm-min) {
-        #{$method}-#{$direction}: $size * 2em;
+        #{$method}-#{$direction}: $size * 1em;
+    }
+    @media (min-width: $screen-md-min) {
+        #{$method}-#{$direction}: $size * 1.5em;
     }
 }

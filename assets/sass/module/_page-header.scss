@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Page Header
+   ========================================================================== */
+
+/**
+ * Extend Twitter Bootstrap's `.page-header` styles.
+ */
+
+.page-header {
+    @include vertical-spacing($size: 2, $method: 'margin');
+    //@include vertical-spacing($size: 4, $method: 'margin', $direction: 'top');
+
+    border-bottom: thin solid $brown-light;
+    margin-top: 0;
+    padding: 0;
+    text-align: center;
+
+    h1 {
+        @include heading;
+
+        color: $gray-darker;
+        margin: .5em;
+    }
+    .lead {
+        color: $gray-dark;
+        font-size: 100%;
+        line-height: $line-height-base;
+        margin: 0 0 .75em;
+
+        @media (min-width: $screen-sm-min) {
+            font-size: $font-size-h4;
+            margin-bottom: 1em;
+        }
+        @media (min-width: $screen-md-min) {
+            font-size: $font-size-h3;
+        }
+    }
+}

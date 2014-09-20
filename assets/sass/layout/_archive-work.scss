@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Archive Work
+   ========================================================================== */
+
+/**
+ * Clear work item floats.
+ */
+.post-type-archive-work {
+    .site__content {
+        .col-xs-6 {
+            &:nth-of-type(odd) {
+                clear: left;
+            }
+            @media (min-width: $screen-sm-min) {
+                &:nth-of-type(odd) {
+                    clear: none;
+                }
+                &:nth-of-type(3n + 1) {
+                    clear: left;
+                }
+            }
+            @media (min-width: $screen-md-min) {
+                &:nth-of-type(3n + 1) {
+                    clear: none;
+                }
+                &:nth-of-type(4n + 1) {
+                    clear: left;
+                }
+            }
+        }
+    }
+}
