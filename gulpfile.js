@@ -64,7 +64,7 @@ gulp.task('build', function () {
 
 gulp.task('default', ['styles', 'scripts']);
 
-gulp.task('watch', function () {
+gulp.task('watch', ['styles', 'scripts'], function () {
     $.livereload.listen();
 
     gulp.watch([
