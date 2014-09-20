@@ -18,9 +18,9 @@ get_header(); ?>
                         <?php the_post_thumbnail('full'); ?>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-pull-4 col-md-pull-3">
-                        <header class="entry-header">
+                        <div class="hidden">
                             <h1 class="entry-title"><?php the_title(); ?></h1>
-                        </header><!-- .entry-header -->
+                        </div><!-- .hidden -->
                         <div class="entry-content">
                             <?php get_template_part('templates/partials/intro-text'); ?>
                             <?php the_content(); ?>
