@@ -12,24 +12,65 @@ if ( ! function_exists( 'capstone_paging_nav' ) ) :
  * Display navigation to next/previous set of posts when applicable.
  */
 function capstone_paging_nav() {
+    global $wp_query;
+
     // Don't print empty markup if there's only one page.
-    if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+    if ($wp_query->max_num_pages < 2) {
         return;
     }
+
+    $format = '/page/%#%';
+    $prev_text = __('&larr; Previous', 'capstone');
+    $next_text = __('Next &rarr;', 'capstone');
+    $output = '<li class="%1$s">%2$s</li>';
+
+    if (empty(get_option('permalink_structure'))) {
+        $format = '?page=%#%';
+    }
+
+    $links = paginate_links(array(
+        'base' => str_replace(999999, '%#%', esc_url(get_pagenum_link(999999))),
+        'format'    => $format,
+        'total'     => $wp_query->max_num_pages,
+        'prev_text' => $prev_text,
+        'next_text' => $next_text,
+        'type'      => 'array',
+    ));
+
     ?>
     <nav class="navigation paging-navigation" role="navigation">
-        <h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'capstone' ); ?></h1>
-        <div class="nav-links">
-
-            <?php if ( get_next_posts_link() ) : ?>
-            <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'capstone' ) ); ?></div>
-            <?php endif; ?>
-
-            <?php if ( get_previous_posts_link() ) : ?>
-            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'capstone' ) ); ?></div>
-            <?php endif; ?>
-
-        </div><!-- .nav-links -->
+        <h1 class="sr-only"><?php _e( 'Posts navigation', 'capstone' ); ?></h1>
+        <ul class="pagination">
+            <?php
+                for ($i = 0; $i < count($links); $i++) {
+                    if ($i === 0 && strpos($links[$i], 'prev') === false) {
+                        printf(
+                            $output,
+                            'disabled',
+                            '<a>' . $prev_text . '</a>'
+                        );
+                    } else if ($i === count($links) - 1 && strpos($links[$i], 'next') === false) {
+                        printf(
+                            $output,
+                            'disabled',
+                            '<a>' . $next_text . '</a>'
+                        );
+                    } else if (strpos($links[$i], 'current') !== false) {
+                        printf(
+                            $output,
+                            'active',
+                            $links[$i]
+                        );
+                    } else {
+                        printf(
+                            $output,
+                            '',
+                            $links[$i]
+                        );
+                    }
+                }
+            ?>
+        </ul><!-- .pagination -->
     </nav><!-- .navigation -->
     <?php
 }
@@ -47,15 +88,29 @@ function capstone_post_nav() {
     if ( ! $next && ! $previous ) {
         return;
     }
+
+    $previous_post = get_previous_post();
+    $next_post = get_next_post();
+
     ?>
-    <nav class="navigation post-navigation" role="navigation">
-        <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'capstone' ); ?></h1>
-        <div class="nav-links">
+    <nav class="navigation post-navigation row" role="navigation">
+        <h1 class="sr-only"><?php _e( 'Post navigation', 'capstone' ); ?></h1>
+        <div class="nav-previous col-xs-6">
             <?php
-                previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'capstone' ) );
-                next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'capstone' ) );
+                if ($previous_post) {
+                    $previous_thumbnail = get_the_post_thumbnail($previous_post->ID);
+                    previous_post_link('%link', "$previous_thumbnail <span><span class=\"meta-nav\">&larr;</span> %title</span>");
+                }
             ?>
-        </div><!-- .nav-links -->
+        </div>
+        <div class="nav-next col-xs-6">
+            <?php
+                if ($next_post) {
+                    $next_thumbnail = get_the_post_thumbnail($next_post->ID);
+                    next_post_link('%link', "$next_thumbnail <span>%title <span class=\"meta-nav\">&rarr;</span></span>");
+                }
+            ?>
+        </div>
     </nav><!-- .navigation -->
     <?php
 }
