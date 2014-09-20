@@ -22,15 +22,17 @@ if (function_exists('get_field')) :
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <a href="<?php the_permalink(); ?>" rel="bookmark">
                         <?php capstone_picture(get_post_thumbnail_id()); ?>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-                                <?php if ($heading) : ?>
-                                    <h1><?php echo $heading; ?></h1>
-                                <?php endif; ?>
-                                <h1 class="entry-title"><?php the_title(); ?></h1>
-                                <span class="btn btn-default"><?php _e('Read Post', 'capstone'); ?></span>
-                            </div>
-                        </div><!-- .row -->
+                        <div class="front-page__section__content">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                                    <?php if ($heading) : ?>
+                                        <h1><?php echo $heading; ?></h1>
+                                    <?php endif; ?>
+                                    <h1 class="entry-title"><?php the_title(); ?></h1>
+                                    <span class="btn btn-default"><?php _e('Read Post', 'capstone'); ?></span>
+                                </div>
+                            </div><!-- .row -->
+                        </div><!-- .front-page__section__content -->
                     </a>
                 </article><!-- #post-<?php the_ID(); ?> -->
             <?php

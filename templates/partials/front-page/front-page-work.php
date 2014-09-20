@@ -28,15 +28,17 @@ if (function_exists('get_field')) :
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <a href="<?php the_permalink(); ?>" rel="bookmark">
                         <?php capstone_picture(get_post_thumbnail_id()); ?>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                                <h1><?php echo $heading; ?></h1>
-                                <p class="lead"><?php echo $content; ?></p>
-                                <?php if ($button_text) : ?>
-                                    <span class="btn btn-default"><?php echo $button_text; ?></span>
-                                <?php endif; ?>
-                            </div>
-                        </div><!-- .row -->
+                        <div class="front-page__section__content">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                                    <h1><?php echo $heading; ?></h1>
+                                    <p class="lead"><?php echo $content; ?></p>
+                                    <?php if ($button_text) : ?>
+                                        <span class="btn btn-default"><?php echo $button_text; ?></span>
+                                    <?php endif; ?>
+                                </div>
+                            </div><!-- .row -->
+                        </div><!-- .front-page__section__content -->
                     </a>
                 </article><!-- #post-<?php the_ID(); ?> -->
             <?php

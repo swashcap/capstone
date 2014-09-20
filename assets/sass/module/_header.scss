@@ -3,13 +3,20 @@
    ========================================================================== */
 
 .site__header {
-    @include vertical-spacing($method: 'margin');
+    @include vertical-spacing($size: 3, $method: 'margin');
 
-    // border-top: 1em solid $brown;
+    @media (min-width: $screen-sm-min) {
+        @include vertical-spacing($method: 'margin', $direction: 'top');
+    }
 
     .navbar-default {
         background: none;
-        border: none;
+        border-color: $brown-light;
+        border-width: 0 0 thin 0;
+
+        @media (min-width: $screen-sm-min) {
+            border: none;
+        }
 
         .navbar-collapse {
             border: none;
@@ -33,9 +40,39 @@
         }
     }
 
+    .navbar-brand {
+        font-family: $font-family-fancy;
+        font-size: $font-size-h1;
+        font-weight: 700;
+        letter-spacing: .125ex;
+        text-transform: uppercase;
+    }
+
     .navbar-toggle {
+        border: none;
+
         .icon-bar {
             border-radius: 0;
+            height: 4px;
+
+            + .icon-bar {
+                margin-top: 3px;
+            }
+        }
+    }
+    .navbar-default .navbar-toggle {
+        &:focus,
+        &:hover {
+            .icon-bar {
+                background: $white;
+            }
+        }
+        &:active {
+            background: $orange-dark;
+
+            .icon-bar {
+                background: $white;
+            }
         }
     }
 
@@ -51,10 +88,17 @@
         }
         .navbar-brand {
             display: inline-block;
-            font-size: $font-size-h1;
-            font-style: italic;
-            font-weight: 400;
             margin-left: 0;
+
+            @media (min-width: $screen-sm-min) {
+                font-size: 36px;
+            }
+            @media (min-width: $screen-md-min) {
+                font-size: 48px;
+            }
+            @media (min-width: $screen-lg-min) {
+                font-size: 56px;
+            }
         }
         .navbar-nav {
             text-align: center;
