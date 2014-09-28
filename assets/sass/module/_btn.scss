@@ -11,6 +11,10 @@
     transition:
         background 100ms ease-in-out,
         color 100ms ease-in-out;
+
+    &:active {
+        box-shadow: none;
+    }
 }
 .btn-default {
     background: $brown;

@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.pagination {
+    text-align: center;
+
+    li {
+        display: inline-block;
+
+        + li {
+            margin-left: .55em;
+        }
+    }
+    > li > a {
+        background: $brown-light;
+        border-radius: $border-radius-base;
+        border: none;
+        color: $brown;
+        font-weight: 700;
+
+        &:focus,
+        &:hover {
+            background: $orange;
+            color: $white;
+        }
+        &:active {
+            background: $orange-dark;
+            color: $white;
+        }
+    }
+    > .disabled > a {
+        &,
+        &:focus,
+        &:hover,
+        &:active {
+            background: mix($brown-light, $white, 25%);
+            color: $brown-light;
+        }
+    }
+    > .active > span {
+        border: none;
+        border-radius: $border-radius-base;
+        font-weight: 700;
+
+        &,
+        &:focus,
+        &:hover,
+        &:active {
+            background: $brown;
+            color: $white;
+        }
+    }
+
+}

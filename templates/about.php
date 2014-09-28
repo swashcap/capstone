@@ -29,11 +29,10 @@ get_header(); ?>
                 </div><!-- .row -->
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-sm-push-8 col-md-3 col-md-push-7">
-                        <?php get_template_part('templates/partials/about', 'vendors'); ?>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-sm-pull-4 col-md-6 col-md-pull-2">
-                        <?php get_template_part('templates/partials/about', 'testimonial'); ?>
-                        <?php get_template_part('templates/partials/about', 'call-to-action'); ?>
+                        <?php get_template_part('templates/partials/about/about', 'testimonial'); ?>
+                        <?php get_template_part('templates/partials/about/about', 'call-to-action'); ?>
                     </div>
                 </div>
             </article><!-- #post-<?php the_ID(); ?>

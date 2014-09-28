@@ -3,14 +3,37 @@
    ========================================================================== */
 
 /**
- * Uppercase.
+ * Fancy border.
  *
- * Normalized upper-casing and letterspacing. Intended for use on the
- * sans-serif font.
+ * Add a border with a centered fleuron.
  */
-@mixin uppercase() {
-    letter-spacing: .25ex;
-    text-transform: uppercase
+@mixin fancy-border($direction: 'bottom') {
+    $pseudo: 'after';
+
+    @if $direction == 'top' {
+        $pseudo: 'before';
+    }
+
+    border-#{$direction}: thin solid $brown-light;
+    position: relative;
+
+    &:#{$pseudo} {
+        #{$direction}: -15px;
+
+        background: $white url(../img/fleuron.png) no-repeat;
+        content: '';
+        display: block;
+        height: 30px;
+        left: 50%;
+        margin: 0 0 0 -15px;
+        position: absolute;
+        width: 30px;
+
+        @media #{$retina} {
+            background-image: url(../img/fleuron@2x.png);
+            background-size: 30px auto;
+        }
+    }
 }
 
 /**
@@ -47,6 +70,17 @@
             color: $orange-dark;
         }
     }
+}
+
+/**
+ * Uppercase.
+ *
+ * Normalized upper-casing and letterspacing. Intended for use on the
+ * sans-serif font.
+ */
+@mixin uppercase {
+    letter-spacing: .25ex;
+    text-transform: uppercase
 }
 
 /**

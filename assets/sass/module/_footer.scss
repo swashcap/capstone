@@ -3,8 +3,12 @@
    ========================================================================== */
 
 .site__footer {
-    @include vertical-spacing($size: 2, $method: 'margin');
+    @include vertical-spacing($size: 2);
+    @include vertical-spacing($size: 2, $direction: 'top');
     @include vertical-spacing($size: 3, $method: 'margin', $direction: 'top');
+
+    background: mix($brown-light, $white, 25%);
+    border-top: thin solid $brown-light;
 
     .col-xs-12:nth-of-type(odd) {
         @media (min-width: $screen-sm-min) {
@@ -24,9 +28,60 @@
         line-height: 1.5;
         padding: .5em 0;
         text-align: center;
-
-        // @media (min-width: $screen-sm-min) {
-        //     padding: 2em 0 3em;
-        // }
     }
 }
+
+/* Navigation
+   ========================================================================== */
+
+#navigation {
+    text-align: center;
+
+    a[rel='home'] {
+        @include uppercase;
+
+        color: $gray-dark;
+        display: block;
+        font-family: $font-family-fancy;
+        font-size: $font-size-h1;
+        line-height: $headings-line-height;
+        margin: 0 0 1em;
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+            color: $orange;
+        }
+        &:active {
+            color: $orange-dark;
+        }
+    }
+    ul {
+        a {
+            @include uppercase;
+
+            color: $gray-dark;
+            background: none;
+
+            &:focus,
+            &:hover {
+                color: $green-dark;
+            }
+            &:active {
+                color: $green;
+            }
+        }
+    }
+}
+
+
+/* Widgets
+   ========================================================================== */
+
+.site__footer {
+    .widget-title {
+        font-family: $font-family-fancy;
+        line-height: $headings-line-height;
+    }
+}
+

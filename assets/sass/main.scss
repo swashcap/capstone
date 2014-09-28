@@ -12,16 +12,21 @@
 @import 'module/form-control';
 @import 'module/header';
 @import 'module/page-header';
+@import 'module/pagination';
 @import 'module/testimonial';
 @import 'module/widget';
 @import 'module/work';
 
+@import 'layout/about';
 @import 'layout/archive-work';
 @import 'layout/front-page';
 
 /**
  * @todo Move these styles somewhere more appropriate.
  */
+.container-fluid {
+    max-width: 1200px;
+}
 // body {
 //     background: lime;
 // }

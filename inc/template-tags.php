@@ -10,9 +10,17 @@
 if ( ! function_exists( 'capstone_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/paginate_links
  */
 function capstone_paging_nav() {
     global $wp_query;
+
+    /**
+     * @todo The current page number isn't output when it is the very
+     *       first or last link. Fix it to also dump the current page.
+     */
+    //$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
     // Don't print empty markup if there's only one page.
     if ($wp_query->max_num_pages < 2) {

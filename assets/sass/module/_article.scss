@@ -28,10 +28,10 @@
 .article--excerpt {
     @extend %article;
 
-    @include vertical-spacing;
+    @include fancy-border;
+    @include vertical-spacing($size: 2);
     @include vertical-spacing($size: 2, $method: 'margin');
 
-    border-bottom: thin solid $brown-light;
     text-align: center;
 
     .entry-thumbnail {
@@ -111,10 +111,16 @@
 
             color: $gray;
         }
+
+        .entry-intro h1 {
+            @include heading;
+
+            font-style: normal;
+        }
         .lead {
-            border-color: $brown-light;
-            border-style: solid;
-            border-width: thin 0;
+            @include fancy-border;
+
+            border-top: thin solid $brown-light;
             color: $brown;
             font-size: $font-size-h4;
             font-style: italic;
