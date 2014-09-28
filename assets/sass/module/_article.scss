@@ -135,6 +135,24 @@
                 padding: 1em 1.7em;
             }
         }
+        > ul {
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                padding: 0 0 0 2em;
+                text-indent: -2em;
+
+                &:before {
+                    color: $green-dark;
+                    content: '•';
+                    display: inline-block;
+                    text-align: center;
+                    text-indent: 0;
+                    width: 2em;
+                }
+            }
+        }
     }
 }
 

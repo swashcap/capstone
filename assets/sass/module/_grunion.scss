@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Grunion
+   ========================================================================== */
+
+/**
+ * Drop-in styles for Grunion, JetPack's contact form.
+ */
+
+.contact-form {
+    @include vertical-spacing;
+    @include vertical-spacing($direction: 'top');
+
+    label {
+        display: block;
+
+        span {
+            color: $orange;
+            padding-left: .5em;
+        }
+    }
+    > div {
+        @extend .form-group;
+
+        input,
+        textarea {
+            @extend .form-control;
+        }
+    }
+    textarea {
+        height: 6em !important;
+    }
+
+    .contact-submit {
+        @include clearfix;
+
+        margin: 0;
+    }
+    input[type='submit'] {
+        @extend .btn;
+        @extend .btn-primary;
+
+        float: right;
+    }
+}
+
+/* Form Errors
+   ========================================================================== */
+
+.article {
+    .form-error {
+        h3 {
+            color: $red;
+            font-size: $font-size-h1;
+            font-weight: 700;
+            letter-spacing: 0;
+            margin: 0 0 .5em;
+            text-transform: none;
+            text-align: left;
+        }
+    }
+    .form-errors {
+        list-style-type: none;
+        padding: 0;
+    }
+    .form-error-message {
+        background: mix($white, $red);
+        border-radius: $border-radius-base;
+        color: $white;
+        display: block;
+        font-weight: 700;
+        padding: $padding-base-vertical $padding-base-horizontal;
+
+        + .form-error-message {
+            margin-top: 1em;
+        }
+    }
+}
+

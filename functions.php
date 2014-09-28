@@ -134,6 +134,12 @@ function capstone_font_url() {
  * Enqueue scripts and styles.
  */
 function capstone_scripts() {
+    /**
+     * Remove JetPack stuff.
+     */
+    wp_deregister_style('grunion.css');
+    wp_dequeue_script('devicepx');
+
     wp_enqueue_style(
         'capstone-webfonts',
         capstone_font_url(),

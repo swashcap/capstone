@@ -20,7 +20,6 @@ get_header(); ?>
                             <?php get_template_part('templates/partials/intro-text'); ?>
                             <?php the_content(); ?>
                         </div><!-- .entry-content -->
-                        <?php get_template_part('templates/partials/contact/contact', 'form'); ?>
                     </div>
                     <div class="col-xs-12 col-sm-4">
                         <?php get_template_part('templates/partials/contact/contact', 'rates'); ?>
