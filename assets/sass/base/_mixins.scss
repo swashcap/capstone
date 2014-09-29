@@ -7,7 +7,7 @@
  *
  * Add a border with a centered fleuron.
  */
-@mixin fancy-border($direction: 'bottom') {
+@mixin fancy-border($direction: 'bottom', $variation: 1) {
     $pseudo: 'after';
 
     @if $direction == 'top' {
@@ -20,7 +20,7 @@
     &:#{$pseudo} {
         #{$direction}: -15px;
 
-        background: $white url(../img/fleuron.png) no-repeat;
+        background: $white url(../img/fleuron-#{$variation}.png) no-repeat;
         content: '';
         display: block;
         height: 30px;
@@ -30,7 +30,7 @@
         width: 30px;
 
         @media #{$retina} {
-            background-image: url(../img/fleuron@2x.png);
+            background-image: url(../img/fleuron-#{$variation}@2x.png);
             background-size: 30px auto;
         }
     }

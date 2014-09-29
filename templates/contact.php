@@ -12,7 +12,7 @@ get_header(); ?>
         ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-8 col-md-6 col-md-offset-1">
+                    <div class="col-xs-12 col-sm-7 col-md-6 col-md-offset-1">
                         <div class="hidden">
                             <h1 class="entry-title"><?php the_title(); ?></h1>
                         </div><!-- .hidden -->
@@ -21,7 +21,7 @@ get_header(); ?>
                             <?php the_content(); ?>
                         </div><!-- .entry-content -->
                     </div>
-                    <div class="col-xs-12 col-sm-4">
+                    <div class="col-xs-12 col-sm-5 col-md-4">
                         <?php get_template_part('templates/partials/contact/contact', 'rates'); ?>
                         <?php get_template_part('templates/partials/contact/contact', 'testimonials'); ?>
                     </div>
