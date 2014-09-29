@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Call To Action
+   ========================================================================== */
+
+.call-to-action {
+    @include vertical-spacing;
+    @include vertical-spacing($direction: 'top');
+
+    background: $brown-lighter;
+    border-color: $brown-light;
+    border-style: solid;
+    border-width: thin 0;
+    padding-right: .5em;
+    padding-left: .5em;
+    text-align: center;
+
+    @media (min-width: $screen-sm-min) {
+        padding-right: 2.19em;
+        padding-left: 2.19em;
+    }
+    @media (min-width: $screen-md-min) {
+        padding-right: 2.5em;
+        padding-left: 2.5em;
+    }
+
+    h1 {
+        @include heading;
+
+        color: $brown-dark;
+        margin-bottom: .5em;
+    }
+    p {
+        color: $brown;
+
+        @media (min-width: $screen-md-min) {
+            margin-bottom: 1em;
+        }
+    }
+}

@@ -7,7 +7,7 @@
     @include vertical-spacing($size: 2, $direction: 'top');
     @include vertical-spacing($size: 3, $method: 'margin', $direction: 'top');
 
-    background: mix($brown-light, $white, 25%);
+    background: $brown-lighter;
     border-top: thin solid $brown-light;
 
     .col-xs-12:nth-of-type(odd) {

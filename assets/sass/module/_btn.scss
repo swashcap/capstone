@@ -30,3 +30,14 @@
         color: $white;
     }
 }
+.btn-primary {
+    background: $green-dark;
+
+    &:focus,
+    &:hover {
+        background: $orange;
+    }
+    &:active {
+        background: $orange-dark;
+    }
+}

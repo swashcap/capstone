@@ -10,9 +10,9 @@ if (function_exists('get_field')) :
     $button_text = get_field('call_to_action_button_text');
     $button_link = get_field('call_to_action_button_link');
 ?>
-    <section class="about__call-to-action">
+    <section class="about__call-to-action call-to-action">
         <h1><?php echo $heading; ?></h1>
-        <p><?php echo $text; ?></p>
+        <p class="lead"><?php echo $text; ?></p>
         <?php
             if ($button_text && $button_link) {
                 printf(
@@ -22,5 +22,5 @@ if (function_exists('get_field')) :
                 );
             }
         ?>
-    </section><!-- .about__call-to-action -->
+    </section><!-- .about__call-to-action.call-to-action -->
 <?php endif; // function_exists('get_field') ?>
