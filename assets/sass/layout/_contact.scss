@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+
+/* Rates
+   ========================================================================== */
+
+.contact__rates {
+    @include vertical-spacing;
+    @include vertical-spacing($direction: 'top');
+    @include vertical-spacing($size: 2, $method: 'margin');
+
+    background: $brown-lighter;
+    border-color: $brown-light;
+    border-style: solid;
+    border-width: thin 0;
+    color: $brown;
+    padding-right: 1em;
+    padding-left: 1em;
+    position: relative;
+    text-align: center;
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-sm-min) {
+        padding-right: 1.75em;
+        padding-left: 1.75em;
+    }
+
+    h1 {
+        color: $brown-dark;
+        font-family: $font-family-fancy;
+        margin: 0 0 .4em;
+
+        em,
+        i {
+            font-style: normal;
+        }
+
+        &:after {
+            background: url(../img/fleurish-1.png) no-repeat;
+            content: '';
+            display: block;
+            height: 15px;
+            margin: .4em auto 0 auto;
+            width: 54px;
+
+            @media #{$retina} {
+                background-image: url(../img/fleurish-1@2x.png);
+                background-size: 54px auto;
+            }
+        }
+    }
+}
