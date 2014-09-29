@@ -107,7 +107,7 @@ function capstone_post_nav() {
             <?php
                 if ($previous_post) {
                     $previous_thumbnail = get_the_post_thumbnail($previous_post->ID);
-                    previous_post_link('%link', "$previous_thumbnail <span><span class=\"meta-nav\">&larr;</span> %title</span>");
+                    previous_post_link('%link', "$previous_thumbnail <span class=\"meta-nav\">&larr;</span> <span class=\"meta-text\">%title</span>");
                 }
             ?>
         </div>
@@ -115,7 +115,7 @@ function capstone_post_nav() {
             <?php
                 if ($next_post) {
                     $next_thumbnail = get_the_post_thumbnail($next_post->ID);
-                    next_post_link('%link', "$next_thumbnail <span>%title <span class=\"meta-nav\">&rarr;</span></span>");
+                    next_post_link('%link', "$next_thumbnail <span class=\"meta-text\">%title</span> <span class=\"meta-nav\">&rarr;</span>");
                 }
             ?>
         </div>

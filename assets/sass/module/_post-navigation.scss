@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Post Navigation
+   ========================================================================== */
+
+.post-navigation {
+    text-align: center;
+
+    a {
+        color: $gray-darker;
+        display: block;
+        position: relative;
+
+        &:focus,
+        &:hover,
+        &:active {
+            .meta-nav {
+                opacity: 0;
+            }
+            .meta-text {
+                opacity: 1;
+            }
+        }
+    }
+    img {
+        display: block;
+    }
+    .meta-nav {
+        background: $white;
+        border-radius: 50%;
+        font-weight: 700;
+        height: 2em;
+        left: 50%;
+        line-height: 2;
+        margin: -1em 0 0 -1em;
+        opacity: .667;
+        position: absolute;
+        text-align: center;
+        transition: opacity 100ms;
+        top: 50%;
+        width: 2em;
+
+        @media (min-width: $screen-sm-min) {
+            font-size: 150%;
+        }
+        @media (min-width: $screen-md-min) {
+            font-size: 200%;
+        }
+    }
+    .meta-text {
+        @include uppercase;
+
+        background: rgba($white, .5);
+        font-size: $font-size-h6;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        line-height: 1.5;
+        opacity: 0;
+        padding: .25em;
+        position: absolute;
+        transition: opacity 100ms;
+        top: 0;
+        width: 100%;
+
+        @media (min-width: $screen-sm-min) {
+            font-size: 100%;
+            padding: .5em;
+        }
+    }
+}
