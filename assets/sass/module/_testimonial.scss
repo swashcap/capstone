@@ -32,7 +32,7 @@
     color: $brown;
     font-size: 100%;
     font-style: italic;
-    line-height: 1.7;
+    line-height: $line-height-base;
     margin: 0 (-.25 * $grid-gutter-width) 1em (-.25 * $grid-gutter-width);
     padding: 0 1.125em;
     position: relative;

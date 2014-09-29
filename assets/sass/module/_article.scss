@@ -75,16 +75,105 @@
         a {
             text-decoration: underline;
         }
-        h1 {
-            color: $green-dark;
-            font-family: $font-family-fancy;
+        blockquote {
+            border: 0;
+            color: $brown;
+            font-size: 100%;
             font-style: italic;
+            line-height: inherit;
+            margin: 0 0 1em;
+            padding: 0 1em 0 1.5em;
+            position: relative;
+
+            @media (min-width: $screen-sm-min) {
+                font-size: $font-size-h3;
+                line-height: 1.5;
+                margin: 1.5em 0;
+                padding-left: 2em;
+
+                blockquote {
+                    margin-top: 0;
+                }
+            }
+
+            &:before,
+            &:after {
+                color: $brown-light;
+                display: block;
+                font-family: $font-family-fancy;
+                font-size: 250%;
+                font-style: normal;
+                line-height: .75;
+                position: absolute;
+                width: 1em;
+            }
+            &:before {
+                content: '“';
+                left: 0;
+                text-align: left;
+                top: 0;
+            }
+            &:after {
+                bottom: -.25em;
+                content: '”';
+                right: 0;
+                text-align: right;
+            }
+
+            blockquote {
+                padding: 0 0 0 1em;
+                position: static;
+
+                &:before,
+                &:after {
+                    content: '';
+                    display: none;
+                }
+            }
+            a {
+                color: inherit;
+                text-decoration: underline;
+
+                &:focus,
+                &:hover {
+                    color: $orange;
+                }
+                &:active {
+                    color: $orange-dark;
+                }
+            }
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            a {
+                color: inherit;
+
+                &:focus,
+                &:hover {
+                    color: $orange;
+                }
+                &:active {
+                    color: $orange-dark;
+                }
+            }
+        }
+        h1 {
+            color: $gray-dark;
+            font-family: $font-family-fancy;
             font-weight: 700;
             text-align: center;
+
+            em,
+            i {
+                font-style: normal;
+            }
         }
         h2 {
-            color: $brown;
-            font-style: italic;
+            color: $gray-dark;
             font-weight: 700;
             text-align: center;
         }
@@ -92,6 +181,7 @@
             @include uppercase;
 
             color: $gray-dark;
+            font-weight: 700;
             text-align: center;
         }
         h4 {
