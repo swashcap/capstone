@@ -34,11 +34,16 @@
     }
 
     .navbar-brand {
+        @include uppercase;
+
         font-family: $font-family-fancy;
         font-size: $font-size-h1;
         font-weight: 700;
-        letter-spacing: .125ex;
-        text-transform: uppercase;
+        letter-spacing: .1ex;
+
+        &:active {
+            color: $orange-dark;
+        }
     }
 
     .navbar-toggle {
@@ -81,16 +86,11 @@
         }
         .navbar-brand {
             display: inline-block;
+            font-size: 36px;
             margin-left: 0;
 
-            @media (min-width: $screen-sm-min) {
-                font-size: 36px;
-            }
             @media (min-width: $screen-md-min) {
                 font-size: 48px;
-            }
-            @media (min-width: $screen-lg-min) {
-                font-size: 56px;
             }
         }
         .navbar-nav {
