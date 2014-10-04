@@ -47,6 +47,10 @@
         position: absolute;
         top: 0;
         width: 40px;
+
+        @media (min-width: $screen-sm-min) {
+            width: 60px;
+        }
     }
     .fn {
         color: $gray-darker;
