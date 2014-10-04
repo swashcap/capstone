@@ -36,11 +36,7 @@
             ) );
         ?>
     </div><!-- .entry-content -->
-    <aside class="call-to-action">
-        <h1>Test</h1>
-        <p class="lead">Test</p>
-        <a href="#" class="btn btn-primary">Contact</a>
-    </aside><!-- .call-to-action -->
+    <?php get_template_part('templates/partials/work', 'call-to-action'); ?>
     <footer class="entry-footer">
         <?php capstone_entry_footer(); ?>
     </footer><!-- .entry-footer -->
