@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Comments Area
+   ========================================================================== */
+
+/**
+ * Style WordPress's comments area and comments dump.
+ */
+
+.comments-title {
+    font-size: $font-size-h1;
+    font-family: $font-family-fancy;
+    font-weight: 700;
+    text-align: center;
+}
+
+.comment-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .children {
+        list-style-type: none;
+        margin: 0 0 0 50px;
+        padding: 0;
+
+        @media (min-width: $screen-sm-min) {
+            margin-left: 80px;
+        }
+    }
+}
+
+/* Response Area
+   ========================================================================== */
+
+.comment-respond {
+    border-top: thin solid $brown-light;
+    padding-top: .5em;
+
+    @media (min-width: $screen-sm-min) {
+        padding-top: 1em;
+    }
+}
+
+.comment-reply-title {
+    @include clearfix;
+
+    font-size: $font-size-h4;
+
+    small {
+        float: right;
+        font-size: $font-size-h6;
+    }
+    a {
+        background: mix($brown-light, $brown);
+        border-radius: $border-radius-base;
+        color: $white;
+        display: inline-block;
+        font-weight: $btn-font-weight;
+        padding: 3px 6px;
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+            background: $orange;
+        }
+        &:active {
+            background: $orange-dark;
+        }
+    }
+}
+
+/**
+ * Change styling on the respond area when it's being used to reply to
+ * a comment.
+ */
+.comment .comment-respond {
+    background: $brown-lighter;
+    border: none;
+    margin-top: .5em;
+    margin-left: 50px;
+    padding-bottom: .5em;
+
+    @media (min-width: $screen-sm-min) {
+        margin-top: 1em;
+        margin-left: 80px;
+        padding-right: 1em;
+        padding-bottom: 1em;
+        padding-left: 1em;
+    }
+}
+
+/* Form
+   ========================================================================== */
+
+.comment-form {
+    @include clearfix;
+
+    margin: 0;
+
+
+    .logged-in-as {
+        color: $gray;
+        font-size: $font-size-h6;
+        text-align: right;
+
+        a {
+            color: $gray;
+            text-decoration: underline;
+
+            &:focus,
+            &:hover {
+                color: $orange;
+            }
+            &:active {
+                color: $orange-dark;
+            }
+        }
+    }
+    .required {
+        color: $orange;
+    }
+    .help-block {
+        float: left;
+        font-size: $font-size-h6;
+    }
+    .form-submit {
+        float: right;
+        margin: 0;
+    }
+    input[type='submit'] {
+        background: $green-dark;
+        border: 0;
+        border-radius: $border-radius-base;
+        color: $white;
+        display: inline-block;
+        font-weight: $btn-font-weight;
+        line-height: inherit;
+        padding: $padding-base-vertical $padding-base-horizontal;
+
+        &:focus,
+        &:hover {
+            background: $orange;
+        }
+        &:active {
+            background: $orange-dark;
+        }
+    }
+}

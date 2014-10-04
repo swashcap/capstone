@@ -18,6 +18,20 @@ a {
         background 100ms ease-in-out,
         color 100ms ease-in-out;
 }
+blockquote {
+    border-left: thin solid $brown-light;
+    color: $brown;
+    font-size: 100%;
+    font-style: italic;
+    margin: 0 0 1em;
+    padding: 0 0 0 1em;
+
+    &:before,
+    &:after {
+        content: '';
+        display: none;
+    }
+}
 h1 {
     margin: 0 0 1em;
 }

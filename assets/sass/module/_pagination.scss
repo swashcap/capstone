@@ -3,6 +3,8 @@
    ========================================================================== */
 
 .pagination {
+    @include vertical-spacing($method: 'margin');
+
     text-align: center;
 
     li {

@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Singular Comments
+   ========================================================================== */
+
+.comment {
+    border-top: thin solid $brown-light;
+    padding-top: .5em;
+
+    @media (min-width: $screen-sm-min) {
+        padding-top: 1em;
+    }
+}
+
+.comment-body {
+    color: $gray-dark;
+    padding-bottom: .5em;
+    padding-left: 50px;
+    position: relative;
+
+    @media (min-width: $screen-sm-min) {
+        padding-bottom: 1em;
+        padding-left: 80px;
+    }
+}
+
+/* Meta
+   ========================================================================== */
+
+.comment-meta {
+    @include clearfix;
+
+    @media (min-width: $screen-sm-min) {
+        margin: 0 0 .5em;
+    }
+}
+
+.comment-author {
+    @media (min-width: $screen-sm-min) {
+        float: left;
+    }
+
+    .avatar {
+        border-radius: 50%;
+        height: auto;
+        left: 0;
+        max-width: none;
+        position: absolute;
+        top: 0;
+        width: 40px;
+    }
+    .fn {
+        color: $gray-darker;
+
+        a {
+            color: inherit;
+
+            &:focus,
+            &:hover {
+                color: $orange;
+            }
+            &:active {
+                color: $orange-dark;
+            }
+        }
+    }
+    .says {
+        display: none;
+    }
+}
+
+.comment-awaiting-moderation {
+
+}
+
+.comment-metadata {
+    font-size: $font-size-h6;
+    line-height: 2.333;
+
+    @media (min-width: $screen-sm-min) {
+        float: right;
+    }
+
+    > a {
+        @include uppercase;
+
+        color: $gray;
+        display: inline-block;
+
+        &:focus,
+        &:hover {
+            color: $orange;
+        }
+        &:active {
+            color: $orange-dark;
+        }
+    }
+}
+
+/* Content
+   ========================================================================== */
+
+.comment-content {
+    margin: 0 0 .5em;
+
+    @media (min-width: $screen-sm-min) {
+        margin: 0 0 1em;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Reply
+   ========================================================================== */
+
+.comment .reply {
+
+}
+.comment-reply-link {
+    background: mix($brown-light, $brown);
+    border-radius: $border-radius-base;
+    display: inline-block;
+    color: $white;
+    font-size: $font-size-h6;
+    font-weight: $btn-font-weight;
+    line-height: $headings-line-height;
+    padding: 3px 6px;
+
+    &:focus,
+    &:hover {
+        background: $orange;
+        color: $white;
+        text-decoration: none;
+    }
+    &:active {
+        background: $orange-dark;
+        color: $white;
+    }
+}

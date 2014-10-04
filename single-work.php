@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * Single work template.
  *
  * @package capstone
  */
@@ -15,7 +15,7 @@ get_header(); ?>
                         while (have_posts()) :
                             the_post();
 
-                            get_template_part('templates/partials/content', 'single');
+                            get_template_part('templates/partials/work', 'single');
 
                             capstone_post_nav();
 

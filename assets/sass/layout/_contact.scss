@@ -39,6 +39,7 @@
             font-style: normal;
         }
 
+        /** @todo Turn this into a mixin. */
         &:after {
             background: url(../img/fleurish-1.png) no-repeat;
             content: '';

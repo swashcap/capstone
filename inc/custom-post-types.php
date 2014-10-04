@@ -68,6 +68,7 @@ function capstone_custom_post_types() {
             'excerpt',
             'trackbacks',
             'custom-fields',
+            'comments',
             'revisions',
             'thumbnail',
             'author',

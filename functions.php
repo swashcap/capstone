@@ -162,8 +162,8 @@ function capstone_scripts() {
         true
     );
 
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
     }
 }
 add_action( 'wp_enqueue_scripts', 'capstone_scripts' );

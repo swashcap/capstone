@@ -109,3 +109,30 @@ function capstone_excerpt_length($length) {
     return 36;
 }
 add_filter('excerpt_length', 'capstone_excerpt_length');
+
+/**
+ * [capstone_list_comments description]
+ *
+ * @link http://codex.wordpress.org/Function_Reference/wp_list_comments
+ *
+ * @return [type] [description]
+ */
+function capstone_list_comments($comment, $args, $depth) {
+    extract($args, EXTR_SKIP);
+
+    if ($args['style'] == 'div') {
+        $tag = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag = 'li';
+        $add_below = 'div-comment';
+    }
+
+    $classes = 'media ';
+    $classes .= empty( $args['has_children'] ) ? '' : 'parent ';
+
+    ?>
+        <<?php echo $tag ?> id="comment-<?php comment_ID() ?>" <?php comment_class($classes) ?>>
+
+    <?php
+}

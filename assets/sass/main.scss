@@ -5,10 +5,13 @@
 
 @import 'base/mixins';
 @import 'base/defaults';
+@import 'base/icons';
 
 @import 'module/article';
 @import 'module/btn';
 @import 'module/call-to-action';
+@import 'module/comment';
+@import 'module/comments-area';
 @import 'module/footer';
 @import 'module/form-control';
 @import 'module/grunion';
@@ -53,3 +56,27 @@
 // .site {
 //     background: $white;
 // }
+
+/**
+ * Edit Links
+ *
+ * @todo Move this style to its own module.
+ */
+.edit-link a {
+    background: #2ea2cc;
+    border: thin solid #0074a2;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    line-height: 2;
+    padding: 0 10px 1px 10px;
+    text-align: center;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+        text-decoration: none;
+    }
+}

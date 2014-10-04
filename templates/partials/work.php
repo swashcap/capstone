@@ -16,11 +16,12 @@
         <?php
             if (function_exists('get_field')) :
                 $location = get_field('location');
-                $date = get_field('event_date');
 
                 if ($location) {
                     echo '<h2 class="work__location">' . $location . '</h2>';
                 }
+
+                unset($location);
             endif;
         ?>
     </a>

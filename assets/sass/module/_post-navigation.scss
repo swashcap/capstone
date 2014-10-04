@@ -3,6 +3,8 @@
    ========================================================================== */
 
 .post-navigation {
+    @include vertical-spacing($method: 'margin');
+
     text-align: center;
 
     a {

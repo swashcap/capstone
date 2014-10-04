@@ -122,7 +122,7 @@
     .navbar-default .navbar-nav > .active > a,
     .navbar-default .navbar-nav > .current-menu-item > a,
     .navbar-default .navbar-nav > .current_page_parent > a,
-    .navbar-default .navbar-nav > li > a[href*='/work'] {
+    .single-work & .navbar-default .navbar-nav > li > a[href*='/work'] {
         background: $brown-lighter;
         color: $green-dark;
         font-weight: 700;
