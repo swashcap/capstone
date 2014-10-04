@@ -202,6 +202,11 @@ require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 require get_template_directory() . '/inc/custom-post-types.php';
 
 /**
+ * Add theme options and admin page.
+ */
+require get_template_directory() . '/inc/theme-options.php';
+
+/**
  * Custom widgets
  */
 require get_template_directory() . '/inc/widget-page-callout.php';
