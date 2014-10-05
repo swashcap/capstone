@@ -40,3 +40,84 @@
 
     }
 }
+
+/* Theme Social Media Widget
+   ========================================================================== */
+
+.widget_capstone_social_media {
+    ul {
+        @include clearfix;
+
+        list-style-type: none;
+        margin: 0 -5px;
+        padding: 0;
+    }
+    .link-facebook a,
+    .link-twitter a,
+    .link-linkedin a,
+    .link-google a,
+    .link-tumblr a,
+    .link-youtube a,
+    .link-virb a,
+    .link-flickr a,
+    .link-instagram a,
+    .link-pinterest a {
+        background-image: url(../img/sprite.png);
+        background-repeat: no-repeat;
+        display: inline-block;
+        float: left;
+        font-size: 0;
+        height: 40px;
+        line-height: 0;
+        margin: 0 5px 10px 5px;
+        transition: none;
+        width: 40px;
+
+        @media #{$retina} {
+            background-image: url(../img/sprite@2x.png);
+            background-size: 400px auto;
+        }
+        @media #{$super-retina} {
+            background-image: url(../img/sprite@3x.png);
+        }
+
+        &:focus,
+        &:hover {
+            background-position-y: -40px;
+        }
+        &:active {
+            background-position-y: -80px;
+        }
+    }
+
+    .link-facebook a {
+        background-position-x: 0;
+    }
+    .link-twitter a {
+        background-position-x: -40px;
+    }
+    .link-linkedin a {
+        background-position-x: -80px;
+    }
+    .link-google a {
+        background-position-x: -120px;
+    }
+    .link-tumblr a {
+        background-position-x: -160px;
+    }
+    .link-youtube a {
+        background-position-x: -200px;
+    }
+    .link-virb a {
+        background-position-x: -240px;
+    }
+    .link-flickr a {
+        background-position-x: -280px;
+    }
+    .link-instagram a {
+        background-position-x: -320px;
+    }
+    .link-pinterest a {
+        background-position-x: -360px;
+    }
+}

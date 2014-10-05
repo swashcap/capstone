@@ -178,6 +178,7 @@ add_action( 'wp_enqueue_scripts', 'capstone_scripts' );
 function capstone_register_widgets() {
     register_widget('Capstone_Widget_Page_Callout');
     register_widget('Capstone_Widget_Testimonial');
+    register_widget('Capstone_Widget_Social_Media');
 }
 add_action('widgets_init', 'capstone_register_widgets');
 
@@ -211,3 +212,4 @@ require get_template_directory() . '/inc/theme-options.php';
  */
 require get_template_directory() . '/inc/widget-page-callout.php';
 require get_template_directory() . '/inc/widget-testimonial.php';
+require get_template_directory() . '/inc/widget-social-media.php';
