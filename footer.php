@@ -39,11 +39,11 @@
                             <?php dynamic_sidebar('footer-sidebar-3'); ?>
                         </div>
                     </div><!-- .row -->
-                    <small class="copyright">
-                        <?php
-                            _e(sprintf('&copy;%d, %s. All rights reserved.', date('Y'), get_bloginfo('name')), 'capstone');
-                        ?>
-                    </small>
+                    <div class="site__footer__bottom">
+                        <small class="copyright">
+                            <?php _e('Powered by <a href="http://wordpress.org/">WordPress</a> and the <a href="http://wordpress.org/themes/capstone/">Capstone theme</a>.'); ?>
+                        </small>
+                    </div><!-- .site__footer__bottom -->
                 </div><!-- .container -->
             </footer><!-- .site__footer -->
         </div><!-- .hfeed.site -->

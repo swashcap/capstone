@@ -22,13 +22,29 @@
     .copyright {
         @include uppercase;
 
-        color: $gray-light;
+        color: mix($brown-light, $brown);
         display: block;
         font-size: $font-size-h6;
         line-height: 1.5;
         padding: .5em 0;
         text-align: center;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+
+            &:focus,
+            &:hover {
+                color: $orange;
+            }
+            &:active {
+                color: $orange-dark;
+            }
+        }
     }
+}
+.site__footer__bottom {
+    @include vertical-spacing($direction: 'top');
 }
 
 /* Navigation
