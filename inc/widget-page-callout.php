@@ -49,10 +49,7 @@ class Capstone_Widget_Page_Callout extends WP_Widget
 
             if ($result->have_posts()) :
                 echo $before_widget;
-                if (! empty($title)) {
-                    echo $before_title . $title . $after_title;
-                }
-                echo '<div class="widget-content">';
+
                 while($result->have_posts()) :
                     $result->the_post();
 
@@ -70,18 +67,28 @@ class Capstone_Widget_Page_Callout extends WP_Widget
                         <?php
                     endif; // ! empty($instance['include_thumbnail']) ...
 
-                    echo '<p>' . $instance['content'] . '</p>';
-
-                    if (! empty($instance['button_text'])) {
-                        printf(
-                            '<a href="%1$s" class="btn btn-default">%2$s</a>',
-                            esc_url(get_permalink()),
-                            $instance['button_text']
-                        );
+                    if (! empty($title)) {
+                        echo $before_title . $title . $after_title;
                     }
+
+                    ?>
+                        <div class="widget-content">
+                            <?php echo apply_filters('the_content', $instance['content']); ?>
+                        </div><!-- .widget_content -->
+                    <?php
+
+                    if (! empty($instance['button_text'])) :
+                        ?>
+                            <div class="widget-button">
+                                <a href="<?php the_permalink(); ?>" class="btn btn-default" rel="bookmark">
+                                    <?php echo esc_html($instance['button_text']); ?>
+                                </a>
+
+                            </div><!-- .widget-button -->
+                        <?php
+                    endif; // ! empty($instance['button_text'])
                 endwhile; // $result->have_posts()
 
-                echo '</div><!-- .widget_content -->';
                 echo $after_widget;
 
             endif; // $result->have_posts()
