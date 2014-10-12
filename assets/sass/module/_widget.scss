@@ -36,6 +36,21 @@
    ========================================================================== */
 
 .widget_capstone_page_callout {
+    .widget-thumbnail {
+        margin: 0 auto .5em auto;
+        width: 120px;
+
+        @media (min-width: $screen-sm) {
+            margin-bottom: 1em;
+        }
+
+        img {
+            border-radius: 50%;
+            display: block;
+            max-width: none;
+            width: 100%;
+        }
+    }
     .widget-content {
 
     }

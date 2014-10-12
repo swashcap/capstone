@@ -12,11 +12,10 @@
 
 .testimonial__image {
     margin: 0 auto .5em auto;
-    width: 6em;
+    width: 120px;
 
     @media (min-width: $screen-sm-min) {
         margin-bottom: 1em;
-        width: 8em;
     }
 
     img {
