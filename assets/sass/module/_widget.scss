@@ -36,6 +36,8 @@
    ========================================================================== */
 
 .widget_capstone_page_callout {
+    @include vertical-spacing($size: 2);
+
     .widget-thumbnail {
         margin: 0 auto .5em auto;
         width: 120px;
@@ -53,6 +55,9 @@
     }
     .widget-content {
 
+    }
+    .widget-button {
+        text-align: center;
     }
 }
 
