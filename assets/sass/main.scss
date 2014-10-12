@@ -21,8 +21,12 @@
 @import 'module/page-header';
 @import 'module/pagination';
 @import 'module/post-navigation';
+@import 'module/sidebar';
 @import 'module/testimonial';
-@import 'module/widget';
+@import 'module/widget/widget-page-callout';
+@import 'module/widget/widget-social-media';
+@import 'module/widget/widget-testimonial';
+@import 'module/widget/widget';
 @import 'module/work';
 
 @import 'layout/about';

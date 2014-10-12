@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Widget
+   ========================================================================== */
+
+/**
+ * Styles for WordPress's built-in widgets.
+ */
+
+.widget {
+
+}
+.widget-title {
+    text-align: center;
+
+}
+
+/* List Widgets
+   ========================================================================== */
+
+.widget_archive,
+.widget_categories,
+.widget_recent_entries,
+.widget_nav_menu {
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+}

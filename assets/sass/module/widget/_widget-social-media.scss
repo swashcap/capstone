@@ -1,68 +1,10 @@
 /* ==========================================================================
-   Widget
+   Widget Social Media
    ========================================================================== */
 
-.widget {
-
-}
-.widget-title {
-    text-align: center;
-
-}
-
-/* List Widgets
-   ========================================================================== */
-
-.widget_archive,
-.widget_categories,
-.widget_recent_entries,
-.widget_nav_menu {
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-}
-
-/* Theme Testimonial Widget
-   ========================================================================== */
-
-.widget_capstone_testimonial {
-    .widget-content {
-
-    }
-}
-
-/* Theme Page Callout Widget
-   ========================================================================== */
-
-.widget_capstone_page_callout {
-    @include vertical-spacing($size: 2);
-
-    .widget-thumbnail {
-        margin: 0 auto .5em auto;
-        width: 120px;
-
-        @media (min-width: $screen-sm) {
-            margin-bottom: 1em;
-        }
-
-        img {
-            border-radius: 50%;
-            display: block;
-            max-width: none;
-            width: 100%;
-        }
-    }
-    .widget-content {
-
-    }
-    .widget-button {
-        text-align: center;
-    }
-}
-
-/* Theme Social Media Widget
-   ========================================================================== */
+/**
+ * Styles for the theme's custom 'Social Media' widget.
+ */
 
 .widget_capstone_social_media {
     ul {
