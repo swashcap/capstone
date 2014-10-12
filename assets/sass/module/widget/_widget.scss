@@ -9,10 +9,6 @@
 .widget {
 
 }
-.widget-title {
-    text-align: center;
-
-}
 
 /* List Widgets
    ========================================================================== */
@@ -23,6 +19,68 @@
 .widget_nav_menu {
     ul {
         list-style-type: none;
+        margin: 0;
         padding: 0;
+    }
+}
+
+.widget_archive,
+.widget_categories {
+    ul {
+        column-count: 2;
+        column-gap: $grid-gutter-width;
+
+        @media (min-width: $screen-sm) {
+            column-count: 1;
+        }
+        @media (min-width: $screen-md) {
+            column-count: 2;
+        }
+    }
+    a {
+        display: block;
+    }
+}
+
+/* Nav Menu Widget
+   ========================================================================== */
+
+.widget_nav_menu {
+    ul ul {
+        padding-left: 1.75em;
+    }
+    a {
+        display: block;
+    }
+}
+
+
+
+/* Recent Entries Widget
+   ========================================================================== */
+
+.widget_recent_entries {
+    li {
+        margin-bottom: .5em;
+
+        @media (min-width: $screen-sm) {
+            margin-bottom: 1em;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    a {
+        display: block;
+        font-size: $font-size-h4;
+        line-height: $headings-line-height;
+        margin: 0 0 .25em;
+    }
+    .post-date {
+        @include uppercase;
+
+        color: $gray;
+        font-size: $font-size-h6;
     }
 }
