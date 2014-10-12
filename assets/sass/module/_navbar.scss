@@ -241,7 +241,11 @@
     }
 
     @media (min-width: $screen-sm-min) {
-        background: none;
+        &,
+        &:focus,
+        &:hover {
+            background: none;
+        }
     }
 }
 .post-type-archive-work,
