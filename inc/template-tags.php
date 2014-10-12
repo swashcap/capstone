@@ -296,3 +296,29 @@ function capstone_work_picture($image_id) {
         esc_attr($alt_text)
     );
 }
+
+/**
+ * Output `picture` element for an avatar.
+ *
+ * @param  int  $image_id WordPress attachment ID
+ * @return void
+ */
+function capstone_avatar_picture($image_id) {
+    $small = wp_get_attachment_image_src($image_id, 'capstone_work_small');
+    $medium = wp_get_attachment_image_src($image_id, 'capstone_work_medium');
+    $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+
+    if ($small && $medium) {
+        printf(
+            '<picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source srcset="%1$s, %2$s 2x">
+                <!--[if IE 9]></video><![endif]-->
+                <img srcset="%1$s, %2$s 2x" alt="%3$s">
+            </picture>',
+            $small[0],
+            $medium[0],
+            esc_attr($alt_text)
+        );
+    }
+}

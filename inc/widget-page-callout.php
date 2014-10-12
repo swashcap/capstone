@@ -64,7 +64,7 @@ class Capstone_Widget_Page_Callout extends WP_Widget
                         ?>
                             <div class="widget-thumbnail">
                                 <a href="<?php the_permalink(); ?>" rel="bookmark">
-                                    <?php the_post_thumbnail(); ?>
+                                    <?php capstone_avatar_picture(get_post_thumbnail_id()); ?>
                                 </a>
                             </div><!-- .widget_thumbnail -->
                         <?php

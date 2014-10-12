@@ -17,14 +17,9 @@ if (function_exists('get_field')) {
 <article id="post-<?php the_ID(); ?>" class="hentry testimonial">
     <?php if (has_post_thumbnail()) : ?>
         <div class="testimonial__image vcard author">
-            <?php
-                the_post_thumbnail(
-                    'full',
-                    array(
-                        'class' => 'attachment-full photo'
-                    )
-                );
-            ?>
+            <div class="photo">
+                <?php capstone_avatar_picture(get_post_thumbnail_id()); ?>
+            </div>
         </div>
     <?php endif; // has_post_thumbnail() ?>
     <div class="entry-content">
