@@ -14,8 +14,15 @@ get_header(); ?>
         ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
                 <div class="row">
-                    <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0 col-sm-push-8 col-md-push-7">
-                        <?php the_post_thumbnail('full'); ?>
+                    <div class="col-xs-12 col-sm-4 col-sm-offset-0 col-sm-push-8">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <div class="entry-thumbnail">
+                                <?php the_post_thumbnail('full'); ?>
+                            </div><!-- .entry-thumbnail -->
+                        <?php endif; ?>
+                        <div class="hidden-xs">
+                            <?php get_template_part('templates/partials/about/about', 'testimonial'); ?>
+                        </div>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-pull-4 col-md-pull-3">
                         <div class="hidden">
@@ -25,16 +32,12 @@ get_header(); ?>
                             <?php get_template_part('templates/partials/intro-text'); ?>
                             <?php the_content(); ?>
                         </div>
-                    </div>
-                </div><!-- .row -->
-                <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-sm-push-8 col-md-3 col-md-push-7">
-                    </div>
-                    <div class="col-xs-12 col-sm-8 col-sm-pull-4 col-md-6 col-md-pull-2">
-                        <?php get_template_part('templates/partials/about/about', 'testimonial'); ?>
+                        <div class="visible-xs">
+                            <?php get_template_part('templates/partials/about/about', 'testimonial'); ?>
+                        </div>
                         <?php get_template_part('templates/partials/about/about', 'call-to-action'); ?>
-                    </div>
-                </div>
+                    </div><!-- .col-xs-12 -->
+                </div><!-- .row -->
             </article><!-- #post-<?php the_ID(); ?>
         <?php
             endwhile; // have_posts()

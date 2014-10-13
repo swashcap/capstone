@@ -2,14 +2,18 @@
    About
    ========================================================================== */
 
-/* Testimonial
-   ========================================================================== */
+.page-template-templatesabout-php {
+    .entry-thumbnail {
+        @include vertical-spacing($size: 2, $method: 'margin');
+    }
+}
+.about__testimonial {
+    margin-bottom: 2em;
 
-// .about__testimonial {
-//     @include vertical-spacing($direction: 'top');
-
-//     border-top: thin solid $brown-light;
-// }
-
-/* Call to Action
-   ========================================================================== */
+    @media (min-width: $screen-sm) {
+        margin-bottom: 0;
+    }
+}
+.about__call-to-action {
+    @include vertical-spacing($size: 2, $method: 'margin', $direction: 'top');
+}
