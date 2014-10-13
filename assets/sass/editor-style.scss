@@ -1,0 +1,87 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+@import 'base/var';
+@import 'base/mixins';
+@import 'base/bootstrap-config';
+@import 'base/defaults';
+
+body {
+    background: $white;
+    color: $gray-dark;
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+
+    @media (min-width: $screen-sm) {
+        margin: ($grid-gutter-width / 2) $grid-gutter-width;
+    }
+}
+a {
+    color: $green-dark;
+
+    &:focus,
+    &:hover {
+        color: $orange;
+    }
+    &:active {
+        color: $orange-dark;
+    }
+}
+h1,
+h2,
+h3 {
+    color: $gray-dark;
+    font-weight: 700;
+    margin: 0 0 1em;
+    text-align: center;
+}
+h4,
+h5,
+h6 {
+    color: $gray;
+    font-weight: 700;
+    margin: 0 0 1em;
+}
+
+h1 {
+    font-family: $font-family-fancy;
+    font-size: $font-size-h1;
+
+    em,
+    i {
+        font-style: normal;
+    }
+}
+h2 {
+    font-size: $font-size-h2;
+}
+h3 {
+    @include uppercase;
+
+    font-size: $font-size-h3;
+}
+h4 {
+    @include uppercase;
+
+    font-size: 100%;
+}
+h5 {
+    font-size: 100%;
+}
+h6 {
+    @include uppercase;
+
+    font-size: $font-size-h6;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+.wp-caption {
+    max-width: 100%;
+}

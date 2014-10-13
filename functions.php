@@ -70,6 +70,15 @@ function capstone_setup() {
     add_image_size('capstone_work_medium', 240, 240, true);
     add_image_size('capstone_work_large', 400, 400, true);
     add_image_size('capstone_work_xlarge', 520, 520, true);
+
+    /**
+     * Add styles so the admin visual editor resembles the theme's
+     * styles.
+     */
+    add_editor_style(array(
+        'assets/css/editor-style.css',
+        capstone_font_url()
+    ));
 }
 endif; // capstone_setup
 add_action( 'after_setup_theme', 'capstone_setup' );
@@ -127,7 +136,9 @@ add_action( 'widgets_init', 'capstone_widgets_init' );
  * @return string
  */
 function capstone_font_url() {
-    return 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Playfair+Display:700,700italic';
+    $font_url = add_query_arg('family', urlencode('Lora:400,700,400italic,700italic|Playfair+Display:700,700italic'), '//fonts.googleapis.com/css');
+
+    return $font_url;
 }
 
 /**
