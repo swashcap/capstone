@@ -16,12 +16,6 @@ if ( ! function_exists( 'capstone_paging_nav' ) ) :
 function capstone_paging_nav() {
     global $wp_query;
 
-    /**
-     * @todo The current page number isn't output when it is the very
-     *       first or last link. Fix it to also dump the current page.
-     */
-    //$paged = get_query_var('paged') ? get_query_var('paged') : 1;
-
     // Don't print empty markup if there's only one page.
     if ($wp_query->max_num_pages < 2) {
         return;
@@ -30,7 +24,6 @@ function capstone_paging_nav() {
     $format = '/page/%#%';
     $prev_text = __('&larr; Previous', 'capstone');
     $next_text = __('Next &rarr;', 'capstone');
-    $output = '<li class="%1$s">%2$s</li>';
 
     if (empty(get_option('permalink_structure'))) {
         $format = '?page=%#%';
@@ -52,29 +45,15 @@ function capstone_paging_nav() {
             <?php
                 for ($i = 0; $i < count($links); $i++) {
                     if ($i === 0 && strpos($links[$i], 'prev') === false) {
-                        printf(
-                            $output,
-                            'disabled',
-                            '<a>' . $prev_text . '</a>'
-                        );
+                        echo '<li class="disabled"><a>' . $prev_text . '</a></li>';
+                        echo '<li class="active">' . $links[$i] . '</li>';
                     } else if ($i === count($links) - 1 && strpos($links[$i], 'next') === false) {
-                        printf(
-                            $output,
-                            'disabled',
-                            '<a>' . $next_text . '</a>'
-                        );
+                        echo '<li class="active">' . $links[$i] . '</li>';
+                        echo '<li class="disabled"><a>' . $next_text . '</a></li>';
                     } else if (strpos($links[$i], 'current') !== false) {
-                        printf(
-                            $output,
-                            'active',
-                            $links[$i]
-                        );
+                        echo '<li class="active">' . $links[$i] . '</li>';
                     } else {
-                        printf(
-                            $output,
-                            '',
-                            $links[$i]
-                        );
+                        echo '<li>' . $links[$i] . '</li>';
                     }
                 }
             ?>
