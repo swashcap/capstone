@@ -56,13 +56,28 @@
     a[rel='home'] {
         @include uppercase;
 
-        color: $gray-dark;
+        color: $brown-dark;
         display: block;
         font-family: $font-family-fancy;
         font-size: $font-size-h1;
+        font-weight: 700;
         line-height: $headings-line-height;
         margin: 0 0 1em;
         text-decoration: none;
+
+        &:after {
+            background: url(../img/fleurish-1.png) no-repeat;
+            content: '';
+            display: block;
+            height: 15px;
+            margin: 1em auto 0 auto;
+            width: 54px;
+
+            @media #{$retina} {
+                background-image: url(../img/fleurish-1@2x.png);
+                background-size: 54px auto;
+            }
+        }
 
         &:focus,
         &:hover {
@@ -81,10 +96,10 @@
 
             &:focus,
             &:hover {
-                color: $green-dark;
+                color: $orange;
             }
             &:active {
-                color: $green;
+                color: $orange-dark;
             }
         }
     }
@@ -95,9 +110,46 @@
    ========================================================================== */
 
 .site__footer {
+    .widget {
+        //text-align: center;
+    }
     .widget-title {
+        color: $brown-dark;
+        font-size: $font-size-h1;
         font-family: $font-family-fancy;
         line-height: $headings-line-height;
     }
 }
 
+/* VCard
+   ========================================================================== */
+
+/**
+ * @todo This is currently be entered manually in a text widget. A
+ *       better method for semantic information should exist, or these
+ *       styles should be made global for the theme. Maybe make a
+ *       'Contact' widget.
+ */
+.site__footer .vcard {
+    margin: 0 0 1em;
+
+    .fn {
+        @include uppercase;
+
+        display: block;
+        font-weight: 700;
+    }
+    a {
+        color: $gray-darker;
+        display: block;
+        text-decoration: underline;
+
+        &:focus,
+        &:hover {
+            color: $orange;
+        }
+        &:active {
+            color: $orange-dark;
+        }
+    }
+}
