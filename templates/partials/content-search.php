@@ -24,6 +24,6 @@
     </div><!-- .entry-summary -->
 
     <footer class="entry-footer">
-        <?php capstone_entry_footer(); ?>
+        <?php capstone_entry_author(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

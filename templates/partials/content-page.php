@@ -22,6 +22,10 @@
     </div><!-- .entry-content -->
 
     <footer class="entry-footer">
+        <div class="hidden">
+            <?php capstone_posted_on(); ?>
+            <?php capstone_entry_author(); ?>
+        </div>
         <?php edit_post_link( __( 'Edit', 'capstone' ), '<span class="edit-link">', '</span>' ); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

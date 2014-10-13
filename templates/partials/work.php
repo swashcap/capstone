@@ -26,5 +26,7 @@
         ?>
     </a>
     <footer class="entry-footer hidden">
+        <?php capstone_posted_on(); ?>
+        <?php capstone_entry_author(); ?>
     </footer>
 </article><!-- #post-<?php the_ID(); ?> -->

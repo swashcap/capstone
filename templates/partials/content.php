@@ -31,6 +31,5 @@
 
     <footer class="entry-footer hidden">
         <?php capstone_entry_author(); ?>
-        <?php capstone_entry_footer(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

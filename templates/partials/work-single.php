@@ -38,6 +38,10 @@
     </div><!-- .entry-content -->
     <?php get_template_part('templates/partials/work', 'call-to-action'); ?>
     <footer class="entry-footer">
+        <div class="hidden">
+            <?php capstone_posted_on(); ?>
+            <?php capstone_entry_author(); ?>
+        </div>
         <?php capstone_entry_footer(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

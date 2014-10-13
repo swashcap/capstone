@@ -38,7 +38,11 @@ get_header(); ?>
                         <?php get_template_part('templates/partials/about/about', 'call-to-action'); ?>
                     </div><!-- .col-xs-12 -->
                 </div><!-- .row -->
-            </article><!-- #post-<?php the_ID(); ?>
+                <footer class="entry-footer hidden">
+                    <?php capstone_posted_on(); ?>
+                    <?php capstone_entry_author(); ?>
+                </footer><!-- .entry-footer.hidden -->
+            </article><!-- #post-<?php the_ID(); ?> -->
         <?php
             endwhile; // have_posts()
         ?>
