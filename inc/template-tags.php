@@ -85,7 +85,7 @@ function capstone_post_nav() {
         <div class="nav-previous col-xs-6">
             <?php
                 if ($previous_post) {
-                    $previous_thumbnail = get_the_post_thumbnail($previous_post->ID);
+                    $previous_thumbnail = get_the_post_thumbnail($previous_post->ID, 'medium');
                     previous_post_link('%link', "$previous_thumbnail <span class=\"meta-nav\">&larr;</span> <span class=\"meta-text\">%title</span>");
                 }
             ?>
@@ -93,7 +93,7 @@ function capstone_post_nav() {
         <div class="nav-next col-xs-6">
             <?php
                 if ($next_post) {
-                    $next_thumbnail = get_the_post_thumbnail($next_post->ID);
+                    $next_thumbnail = get_the_post_thumbnail($next_post->ID, 'medium');
                     next_post_link('%link', "$next_thumbnail <span class=\"meta-text\">%title</span> <span class=\"meta-nav\">&rarr;</span>");
                 }
             ?>
