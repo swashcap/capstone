@@ -8,9 +8,12 @@
     text-align: center;
 
     a {
+        background: $brown-lighter;
         color: $gray-darker;
         display: block;
+        height: 0;
         position: relative;
+        padding-bottom: 66.67%;
 
         &:focus,
         &:hover,
