@@ -131,14 +131,17 @@ add_action( 'widgets_init', 'capstone_widgets_init' );
 /**
  * Return the stylesheet URL for theme's webfonts.
  *
+ * Commas trip up WordPress's internal CSS loader that's called with
+ * `add_editor_style()`. However, doing a full URL escape messes with
+ * how Google's servers parse the requested fonts. `str_replace` is
+ * used as a happy medium.
+ *
  * @todo Make these controllable in the admin.
  *
  * @return string
  */
 function capstone_font_url() {
-    $font_url = add_query_arg('family', urlencode('Lora:400,700,400italic,700italic|Playfair+Display:700,700italic'), '//fonts.googleapis.com/css');
-
-    return $font_url;
+    return '//fonts.googleapis.com/css?family=' . str_replace(',', '%2C', 'Lora:400,700,400italic,700italic|Playfair+Display:700,700italic');
 }
 
 /**
