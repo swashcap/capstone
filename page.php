@@ -17,6 +17,9 @@ get_header(); ?>
 
                             get_template_part('templates/partials/content', 'page');
 
+                            if (comments_open() || get_comments_number() != '0') :
+                                comments_template();
+                            endif;
                         endwhile; // have_posts()
                     ?>
                 </main><!-- .site__content -->
