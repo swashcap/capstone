@@ -18,7 +18,7 @@ function capstone_custom_post_types() {
         'hierarchical'        => false,
         'rewrite'             => array(
             'slug' => 'testimonial',
-            'with_front' => true,
+            'with_front' => false
         ),
         'query_var'           => true,
         'exclude_from_search' => true,
@@ -61,7 +61,8 @@ function capstone_custom_post_types() {
         'map_meta_cap'    => true,
         'hierarchical'    => true,
         'rewrite'         => array(
-            'with_front' => 0,
+            'slug'       => 'work/%work_categories%',
+            'with_front' => false
         ),
         'query_var'       => true,
         'supports'        => array(
@@ -103,6 +104,10 @@ function capstone_custom_post_types() {
             'show_ui'           => true,
             'query_var'         => true,
             'show_admin_column' => false,
+            'rewrite'           => array(
+                'slug'       => 'work',
+                'with_front' => false
+            ),
             'labels'            => array(
                 'search_items'               => __('Category', 'capstone'),
                 'popular_items'              => '',

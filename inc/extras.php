@@ -136,3 +136,24 @@ function capstone_list_comments($comment, $args, $depth) {
 
     <?php
 }
+
+/**
+ * Rewrites for the `work` custom post type and its taxonomy.
+ *
+ * @link http://wordpress.stackexchange.com/a/39862
+ * @link http://wordpress.stackexchange.com/a/5313
+ *
+ * @package capstone
+ */
+function capstone_filter_post_type_link($link, $post) {
+    if ($post->post_type != 'work') {
+        return $link;
+    }
+
+    if ($cats = get_the_terms($post->ID, 'work_categories')) {
+        $link = str_replace('%work_categories%', array_pop($cats)->slug, $link);
+    }
+
+    return $link;
+}
+add_filter('post_type_link', 'capstone_filter_post_type_link', 10, 2);
