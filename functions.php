@@ -176,6 +176,17 @@ function capstone_scripts() {
         true
     );
 
+    // Livereload for development
+    if (defined('WP_DEBUG') && WP_DEBUG) {
+        wp_enqueue_script(
+            'capstone-livereload',
+            'http://localhost:35729/livereload.js?snipver=1',
+            null,
+            null,
+            true
+        );
+    }
+
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
