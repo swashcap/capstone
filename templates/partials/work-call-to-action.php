@@ -10,6 +10,8 @@ if (function_exists('get_field')) :
     $content = get_field('call_to_action_content');
     $button_link = get_field('call_to_action_button_link');
     $button_text = get_field('call_to_action_button_text');
+
+    if ($heading || $content) :
 ?>
     <aside class="call-to-action">
         <?php if ($heading) : ?>
@@ -23,6 +25,8 @@ if (function_exists('get_field')) :
         <?php endif; ?>
     </aside><!-- .call-to-action -->
 <?php
+    endif; // $heading || $content
+
     unset($heading, $content, $button_link, $button_text);
 endif; // function_exists('get_field')
 ?>
