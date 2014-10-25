@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Gallery
+   ========================================================================== */
+
+/**
+ * Styles for WordPress's Gallery markup.
+ */
+
+.gallery {
+    margin-right: -.5 * $grid-gutter-width;
+    margin-left: -.5 * $grid-gutter-width;
+}
+.gallery-item {
+    margin-bottom: 1em;
+    padding-right: $grid-gutter-width / 2;
+    padding-left: $grid-gutter-width / 2;
+
+    .article & .wp-caption-text,
+    .wp-caption-text {
+        margin-top: .25em;
+        text-align: left;
+    }
+}
+.gallery-size-thumbnail {
+    a {
+        transition: opacity 100ms ease-in-out;
+
+        &:focus,
+        &:hover {
+            opacity: .8;
+        }
+        &:active {
+            opacity: .6;
+        }
+    }
+    img {
+        width: 75px;
+    }
+}
+
+/**
+ * Varied admin-set gallery columns.
+ */
+@for $i from 2 through 9 {
+    .gallery-columns-#{$i} {
+        @include clearfix;
+    }
+
+    @media (min-width: $screen-sm) {
+        .gallery-columns-#{$i} .gallery-item {
+            float: left;
+            width: 100% / $i;
+
+            &:nth-of-type(#{$i}n + 1) {
+                clear: left;
+            }
+        }
+    }
+}
