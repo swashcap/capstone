@@ -38,10 +38,15 @@ get_header(); ?>
                         <?php get_template_part('templates/partials/about/about', 'call-to-action'); ?>
                     </div><!-- .col-xs-12 -->
                 </div><!-- .row -->
-                <footer class="entry-footer hidden">
-                    <?php capstone_posted_on(); ?>
-                    <?php capstone_entry_author(); ?>
-                </footer><!-- .entry-footer.hidden -->
+                <footer class="entry-footer row">
+                    <div class="hidden">
+                        <?php capstone_posted_on(); ?>
+                        <?php capstone_entry_author(); ?>
+                    </div>
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-md-offset-1">
+                        <?php edit_post_link( __( 'Edit', 'capstone' ), '<span class="edit-link">', '</span>' ); ?>
+                    </div>
+                </footer><!-- .entry-footer -->
             </article><!-- #post-<?php the_ID(); ?> -->
         <?php
             endwhile; // have_posts()
