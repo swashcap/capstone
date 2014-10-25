@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Entry Footer
+   ========================================================================== */
+
+.entry-footer {
+    @include vertical-spacing($method: 'margin');
+
+    border-color: $gray-lighter;
+    border-style: solid;
+    border-width: thin 0;
+    padding: .5em 0;
+
+    .cat-links,
+    .tags-links {
+        color: $gray;
+        display: block;
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+
+        a {
+            color: $gray-dark;
+            text-decoration: underline;
+
+            &:focus,
+            &:hover {
+                color: $orange;
+            }
+            &:active {
+                color: $orange-dark;
+            }
+        }
+    }
+
+    /**
+     * 'Edit' button links when a user is logged in.
+     */
+    .edit-link {
+        display: block;
+        margin-top: .5em;
+        text-align: right;
+    }
+}
