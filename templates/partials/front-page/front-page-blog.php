@@ -29,7 +29,9 @@ if (function_exists('get_field')) :
                                         <h1><?php echo $heading; ?></h1>
                                     <?php endif; ?>
                                     <h1 class="entry-title"><?php the_title(); ?></h1>
-                                    <span class="btn btn-default"><?php _e('Read Post', 'capstone'); ?></span>
+                                    <div>
+                                        <span class="btn btn-primary"><?php _e('Read Post', 'capstone'); ?></span>
+                                    </div>
                                 </div>
                             </div><!-- .row -->
                         </div><!-- .front-page__section__content -->

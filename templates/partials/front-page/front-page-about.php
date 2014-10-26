@@ -21,7 +21,7 @@ if (function_exists('get_field')) :
                             <h1><?php echo $heading; ?></h1>
                             <p class="lead"><?php echo $content; ?></p>
                             <?php if ($button_text) : ?>
-                                <span class="btn btn-default"><?php echo $button_text; ?></span>
+                                <span class="btn btn-primary"><?php echo $button_text; ?></span>
                             <?php endif; ?>
                         </div>
                     </div><!-- .row -->
