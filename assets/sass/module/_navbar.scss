@@ -227,6 +227,7 @@
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .current-menu-item > a,
 .navbar-default .navbar-nav > .current_page_parent > a,
+.navbar-default .navbar-nav > .current-menu-ancestor > a,
 .single-work .navbar-default .navbar-nav > li > a[href*='/work'] {
     background: $brown-lighter;
     color: $green-dark;
@@ -248,6 +249,7 @@
         }
     }
 }
+.tax-work_categories,
 .post-type-archive-work,
 .single-work {
     .navbar-default .navbar-nav > .current_page_parent > a {
@@ -263,4 +265,14 @@
             color: $orange-dark;
         }
     }
+}
+.tax-work_categories .navbar-default .navbar-nav > .current-menu-ancestor.open > a {
+    background: $brown-lighter;
+}
+.navbar-default .navbar-nav .dropdown-menu > .active > a {
+    background: $brown-lighter;
+    font-weight: 700;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a {
+    color: $green-dark;
 }
