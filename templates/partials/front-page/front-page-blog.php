@@ -28,10 +28,13 @@ if (function_exists('get_field')) :
                                     <?php if ($heading) : ?>
                                         <h1><?php echo $heading; ?></h1>
                                     <?php endif; ?>
-                                    <h1 class="entry-title"><?php the_title(); ?></h1>
-                                    <div>
-                                        <span class="btn btn-primary"><?php _e('Read Post', 'capstone'); ?></span>
+                                    <div class="front-page__section__content__wrapper">
+                                        <div class="entry-meta">
+                                            <?php capstone_posted_on(); ?>
+                                        </div><!-- .entry-meta -->
+                                        <h1 class="entry-title"><?php the_title(); ?></h1>
                                     </div>
+                                    <span class="btn btn-primary"><?php _e('Read Post', 'capstone'); ?></span>
                                 </div>
                             </div><!-- .row -->
                         </div><!-- .front-page__section__content -->

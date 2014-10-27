@@ -77,9 +77,6 @@
     @media (min-width: $screen-md-min) {
         padding: $grid-gutter-width / 2;
     }
-    @media (min-width: $screen-lg-min) {
-        padding: $grid-gutter-width;
-    }
 
     h1 {
         font-family: $font-family-fancy;
@@ -97,6 +94,7 @@
         }
     }
     p.lead {
+        color: $gray-darker;
         font-size: 100%;
         margin: 0 0 .5em;
 
@@ -122,5 +120,46 @@
     .lead {
         font-size: 100%;
         line-height: $line-height-base;
+    }
+}
+
+/* Blog
+   ========================================================================== */
+
+.front-page__blog {
+    .front-page__section__content__wrapper {
+        margin-bottom: 1em;
+
+        @media (min-width: $screen-sm) {
+            margin-bottom: .857em;
+        }
+    }
+    .entry-meta {
+        @include uppercase;
+
+        color: $gray;
+        font-size: $font-size-small;
+        vertical-align: middle;
+
+        @media (min-width: $screen-sm) {
+            color: inherit;
+            display: inline;
+
+            &:after {
+                content: '—';
+                display: inline;
+            }
+        }
+    }
+    .entry-title {
+        font-family: $font-family-serif;
+        font-size: $font-size-h4;
+        font-weight: 700;
+        margin: 0;
+
+        @media (min-width: $screen-sm) {
+            display: inline;
+            font-weight: 400;
+        }
     }
 }
