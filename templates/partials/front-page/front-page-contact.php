@@ -11,6 +11,7 @@ if (function_exists('get_field')) :
     $heading = get_field('contact_heading');
     $content = get_field('contact_content');
     $button_text = get_field('contact_button_text');
+    $button_link = get_field('contact_button_link');
 
     if ($testimonial_id) :
         $testimonial = new WP_Query(array(
@@ -20,7 +21,7 @@ if (function_exists('get_field')) :
 ?>
         <section class="front-page__contact">
             <div class="container-fluid">
-                <a href="/booking/">
+                <a href="<?php echo esc_url($button_link); ?>">
                     <?php if ($image) : ?>
                         <?php capstone_picture($image); ?>
                     <?php endif; ?>
@@ -54,7 +55,7 @@ if (function_exists('get_field')) :
         </section><!-- .contact -->
 <?php
         wp_reset_query();
-        unset($image, $testimonial_id, $heading, $content, $button_text, $testimonial);
+        unset($image, $testimonial_id, $heading, $content, $button_text, $button_link, $testimonial);
     endif; // $testimonial_id
 endif; // function_exists('get_field')
 ?>
