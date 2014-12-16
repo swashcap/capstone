@@ -85,7 +85,7 @@ function capstone_post_nav() {
         <div class="nav-previous col-xs-6">
             <?php
                 if ($previous_post) {
-                    $previous_thumbnail = get_the_post_thumbnail($previous_post->ID, 'medium');
+                    $previous_thumbnail = capstone_work_picture(get_post_thumbnail_id($previous_post->ID), false);
                     previous_post_link('%link', "$previous_thumbnail <span class=\"meta-nav\">&larr;</span> <span class=\"meta-text\">%title</span>");
                 }
             ?>
@@ -93,7 +93,7 @@ function capstone_post_nav() {
         <div class="nav-next col-xs-6">
             <?php
                 if ($next_post) {
-                    $next_thumbnail = get_the_post_thumbnail($next_post->ID, 'medium');
+                    $next_thumbnail = capstone_work_picture(get_post_thumbnail_id($next_post->ID), false);
                     next_post_link('%link', "$next_thumbnail <span class=\"meta-text\">%title</span> <span class=\"meta-nav\">&rarr;</span>");
                 }
             ?>
@@ -250,16 +250,17 @@ function capstone_picture($image_id) {
  * Output `picture` element specifically for 'micro' work elements.
  *
  * @param  int  $image_id WordPress attachment ID
+ * @param  bool $echo     Whether to echo or return output
  * @return void
  */
-function capstone_work_picture($image_id) {
+function capstone_work_picture($image_id = 0, $echo = true) {
     $small = wp_get_attachment_image_src($image_id, 'capstone_work_small');
     $medium = wp_get_attachment_image_src($image_id, 'capstone_work_medium');
     $large = wp_get_attachment_image_src($image_id, 'capstone_work_large');
     $xlarge = wp_get_attachment_image_src($image_id, 'capstone_work_xlarge');
     $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
 
-    printf(
+    $output = sprintf(
         '<picture>
             <!--[if IE 9]><video style="display: none;"><![endif]-->
             <source srcset="%2$s, %1$s 2x" media="(min-width: 901px)">
@@ -274,6 +275,13 @@ function capstone_work_picture($image_id) {
         $small[0],
         esc_attr($alt_text)
     );
+
+    if ($echo) {
+        echo $output;
+        return;
+    }
+
+    return $output;
 }
 
 /**
