@@ -41,7 +41,7 @@
                     </div><!-- .row -->
                     <div class="site__footer__bottom">
                         <small class="copyright">
-                            <?php _e('Powered by <a href="http://wordpress.org/">WordPress</a> and the <a href="http://wordpress.org/themes/capstone/">Capstone theme</a>.'); ?>
+                            <?php _e('Powered by <a href="http://wordpress.org/">WordPress</a> and the <a href="http://capstone.swashcap.com/">Capstone theme</a>.'); ?>
                         </small>
                     </div><!-- .site__footer__bottom -->
                 </div><!-- .container -->
