@@ -15,9 +15,10 @@
         <h1 class="work__title entry-title"><?php the_title(); ?></h1>
         <?php
             if (function_exists('get_field')) :
+                $show_location_date = get_field('show_location_and_date');
                 $location = get_field('location');
 
-                if ($location) {
+                if ($show_location_date && $location) {
                     echo '<h2 class="work__location">' . $location . '</h2>';
                 }
 

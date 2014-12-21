@@ -10,20 +10,23 @@
         <h1 class="entry-title work__title"><?php the_title(); ?></h1>
         <?php
             if (function_exists('get_field')) :
+                $show_location_date = get_field('show_location_and_date');
                 $location = get_field('location');
                 $date = get_field('event_date');
 
-                if ($location) {
-                    echo '<h2 class="work__location">' . $location . '</h2>';
-                }
-                if ($date) {
-                    printf(
-                        '<h3 class="work__date">%s</h3>',
-                        date(get_option('date_format'), strtotime($date))
-                    );
+                if ($show_location_date) {
+                    if ($location) {
+                        echo '<h2 class="work__location">' . $location . '</h2>';
+                    }
+                    if ($date) {
+                        printf(
+                            '<h3 class="work__date">%s</h3>',
+                            date(get_option('date_format'), strtotime($date))
+                        );
+                    }
                 }
 
-                unset($location, $date);
+                unset($show_location_date, $location, $date);
             endif;
         ?>
     </header>
