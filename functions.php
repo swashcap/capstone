@@ -238,3 +238,8 @@ require get_template_directory() . '/inc/theme-options.php';
 require get_template_directory() . '/inc/widget-page-callout.php';
 require get_template_directory() . '/inc/widget-testimonial.php';
 require get_template_directory() . '/inc/widget-social-media.php';
+
+/**
+ * Custom fields with AFC external file.
+ */
+require get_template_directory() . '/inc/custom-fields.php';
