@@ -7,19 +7,25 @@
 
 get_header(); ?>
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-6 col-md-offset-1">
+                <main class="site__content" role="main">
+                    <section class="error-404 not-found">
+                        <header class="page-header">
+                            <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'capstone' ); ?></h1>
+                        </header><!-- .page-header -->
 
-            <section class="error-404 not-found">
-                <header class="page-header">
-                    <h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'capstone' ); ?></h1>
-                </header><!-- .page-header -->
+                        <div class="page-content">
+                            <p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'capstone' ); ?></p>
 
-                <div class="page-content">
-                    <p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'capstone' ); ?></p>
-
-                    <?php get_search_form(); ?>
-
+                            <?php get_search_form(); ?>
+                        </div><!-- .page-content -->
+                    </section><!-- .error-404 -->
+                </main><!-- .site__content -->
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-offset-1">
+                <aside class="site__sidebar widget-area" role="secondary">
                     <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
                     <?php if ( capstone_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
@@ -46,11 +52,9 @@ get_header(); ?>
                     ?>
 
                     <?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-
-                </div><!-- .page-content -->
-            </section><!-- .error-404 -->
-
-        </main><!-- #main -->
-    </div><!-- #primary -->
+                </aside><!-- .site__sidebar.widget-area -->
+            </div>
+        </div><!-- .row -->
+    </div><!-- .container-fluid -->
 
 <?php get_footer(); ?>
