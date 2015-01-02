@@ -243,3 +243,10 @@ require get_template_directory() . '/inc/widget-social-media.php';
  * Custom fields with AFC external file.
  */
 require get_template_directory() . '/inc/custom-fields.php';
+
+/**
+ * Theme updates.
+ */
+define('SC_THEME_UPDATER_API_URL', 'http://capstone.swashcap.com/update/');
+
+require get_template_directory() . '/inc/class-sc-theme-updater-client.php';
