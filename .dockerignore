@@ -1,0 +1,14 @@
+Dockerfile
+.bowerrc
+.editorconfig
+.git*
+.sash_cache
+bower.json
+docker-compose.yml
+gulpfile.js
+node_modules
+package.json
+assets/bower_components/
+assets/sass/
+
+
